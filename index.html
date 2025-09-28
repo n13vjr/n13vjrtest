@@ -104,12 +104,10 @@
 .popup-content {
     width: 100%;
     box-sizing: border-box;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     max-height: calc(100% - 56px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: block;
     text-align: center;
 }
 	</style>
@@ -136,6 +134,10 @@
 	<div id="cuaso1" class="popup" style="top:120px; left:120px;">
     <div id="custom-header" class="popup-header">
         <span id="custom-title" class="popup-title">13th / nerr</span>
+        <div style="display:flex; gap:4px;">
+            <button id="custom-min" title="Thu nhỏ" style="width:28px; height:28px; border:none; background:#eee; border-radius:6px; cursor:pointer; font-size:16px;">–</button>
+            <button id="custom-max" title="Mở rộng" style="width:28px; height:28px; border:none; background:#eee; border-radius:6px; cursor:pointer; font-size:16px;">□</button>
+        </div>
     </div>
     <div id="custom-content" class="popup-content">
         <a href="https://discordapp.com/users/1115398524805324941" target="_blank" style="color:#5865F2; text-decoration:none; display:flex; align-items:center; gap:8px; margin-bottom:12px;">
@@ -151,18 +153,26 @@
             13th
         </a>
     </div>
-    <div class="resize-handle" id="custom-resize" style="position:absolute; right:0; bottom:0; width:18px; height:18px; cursor:se-resize; background:rgba(0,0,0,0.08); border-radius:0 0 6px 0; border:1px solid #ccc; z-index:100000;"></div>
+    <!-- Xóa handle cũ, đã có handle mới tự động tạo -->
 </div>
 <div id="cuaso2" class="popup" style="top:180px; left:180px;">
     <div id="cuaso2-header" class="popup-header">
         <span id="cuaso2-title" class="popup-title">Cửa sổ 2 mờ 300x400px</span>
+        <div style="display:flex; gap:4px;">
+            <button id="cuaso2-min" title="Thu nhỏ" style="width:28px; height:28px; border:none; background:#eee; border-radius:6px; cursor:pointer; font-size:16px;">–</button>
+            <button id="cuaso2-max" title="Mở rộng" style="width:28px; height:28px; border:none; background:#eee; border-radius:6px; cursor:pointer; font-size:16px;">□</button>
+        </div>
     </div>
     <div id="cuaso2-content" class="popup-content">Nội dung cửa sổ 2...</div>
-    <div class="resize-handle" id="cuaso2-resize" style="position:absolute; right:0; bottom:0; width:18px; height:18px; cursor:se-resize; background:rgba(0,0,0,0.08); border-radius:0 0 6px 0; border:1px solid #ccc; z-index:100000;"></div>
+    <!-- Xóa handle cũ, đã có handle mới tự động tạo -->
 </div>
 <div id="cuaso3" class="popup" style="top:240px; left:240px;">
     <div id="cuaso3-header" class="popup-header">
         <span id="cuaso3-title" class="popup-title">My Roblox Accounts(21)</span>
+        <div style="display:flex; gap:4px;">
+            <button id="cuaso3-min" title="Thu nhỏ" style="width:28px; height:28px; border:none; background:#eee; border-radius:6px; cursor:pointer; font-size:16px;">–</button>
+            <button id="cuaso3-max" title="Mở rộng" style="width:28px; height:28px; border:none; background:#eee; border-radius:6px; cursor:pointer; font-size:16px;">□</button>
+        </div>
     </div>
     <div id="cuaso3-content" class="popup-content">
             <div><a href="https://www.roblox.com/users/3518420197/profile" target="_blank"><img src="pic/n13vjr.png" alt="avatar" style="width:32px; height:32px; border-radius:50%; margin-right:8px; vertical-align:middle;"></a> <b>Roblox Account 1:</b> n13vjr</div>
@@ -188,140 +198,164 @@
             <div><a href="https://www.roblox.com/users/7682922659/profile" target="_blank"><img src="pic/n13vjr13.png" alt="avatar" style="width:32px; height:32px; border-radius:50%; margin-right:8px; vertical-align:middle;"></a> <b>Roblox Account 21:</b> n13vjr_13</div>
         </div>
     </div>
-    <div class="resize-handle" id="cuaso3-resize" style="position:absolute; right:0; bottom:0; width:18px; height:18px; cursor:se-resize; background:rgba(0,0,0,0.08); border-radius:0 0 6px 0; border:1px solid #ccc; z-index:100000;"></div>
+    <!-- Xóa handle cũ, đã có handle mới tự động tạo -->
 </div>
 	<script>
-        // Resize cho customWindow
-        const customResize = document.getElementById('custom-resize');
-        let isResizingCustom = false;
-        customResize.addEventListener('mousedown', function(e) {
-            isResizingCustom = true;
-            e.preventDefault();
-            e.stopPropagation();
-        });
-        document.addEventListener('mousemove', function(e) {
-            if (isResizingCustom) {
-                let minW = 200, minH = 120;
-                let newW = Math.max(minW, e.clientX - customWindow.offsetLeft);
-                let newH = Math.max(minH, e.clientY - customWindow.offsetTop);
-                customWindow.style.width = newW + 'px';
-                customWindow.style.height = newH + 'px';
-            }
-        });
-        document.addEventListener('mouseup', function() {
-            isResizingCustom = false;
-        });
-        // Resize bằng cảm ứng cho customWindow
-        customResize.addEventListener('touchstart', function(e) {
-            if (e.touches.length === 1) {
-                isResizingCustom = true;
-                e.preventDefault();
-                e.stopPropagation();
-            }
-        });
-        document.addEventListener('touchmove', function(e) {
-            if (isResizingCustom && e.touches.length === 1) {
-                let minW = 200, minH = 120;
-                let newW = Math.max(minW, e.touches[0].clientX - customWindow.offsetLeft);
-                let newH = Math.max(minH, e.touches[0].clientY - customWindow.offsetTop);
-                customWindow.style.width = newW + 'px';
-                customWindow.style.height = newH + 'px';
-            }
-        });
-        document.addEventListener('touchend', function() {
-            isResizingCustom = false;
-        });
-        // Resize cho cuaso2
-        const cuaso2Resize = document.getElementById('cuaso2-resize');
-        let isResizingCuaso2 = false;
-        cuaso2Resize.addEventListener('mousedown', function(e) {
-            isResizingCuaso2 = true;
-            e.preventDefault();
-            e.stopPropagation();
-        });
-        document.addEventListener('mousemove', function(e) {
-            if (isResizingCuaso2) {
-                let minW = 200, minH = 120;
-                let newW = Math.max(minW, e.clientX - cuaso2.offsetLeft);
-                let newH = Math.max(minH, e.clientY - cuaso2.offsetTop);
-                cuaso2.style.width = newW + 'px';
-                cuaso2.style.height = newH + 'px';
-            }
-        });
-        document.addEventListener('mouseup', function() {
-            isResizingCuaso2 = false;
-        });
-        // Resize bằng cảm ứng cho cuaso2
-        cuaso2Resize.addEventListener('touchstart', function(e) {
-            if (e.touches.length === 1) {
-                isResizingCuaso2 = true;
-                e.preventDefault();
-                e.stopPropagation();
-            }
-        });
-        document.addEventListener('touchmove', function(e) {
-            if (isResizingCuaso2 && e.touches.length === 1) {
-                let minW = 200, minH = 120;
-                let newW = Math.max(minW, e.touches[0].clientX - cuaso2.offsetLeft);
-                let newH = Math.max(minH, e.touches[0].clientY - cuaso2.offsetTop);
-                cuaso2.style.width = newW + 'px';
-                cuaso2.style.height = newH + 'px';
-            }
-        });
-        document.addEventListener('touchend', function() {
-            isResizingCuaso2 = false;
-        });
-        // Resize cho cuaso3
-        const cuaso3Resize = document.getElementById('cuaso3-resize');
-        let isResizingCuaso3 = false;
-        cuaso3Resize.addEventListener('mousedown', function(e) {
-            isResizingCuaso3 = true;
-            e.preventDefault();
-            e.stopPropagation();
-        });
-        document.addEventListener('mousemove', function(e) {
-            if (isResizingCuaso3) {
-                let minW = 200, minH = 120;
-                let newW = Math.max(minW, e.clientX - cuaso3.offsetLeft);
-                let newH = Math.max(minH, e.clientY - cuaso3.offsetTop);
-                cuaso3.style.width = newW + 'px';
-                cuaso3.style.height = newH + 'px';
-            }
-        });
-        document.addEventListener('mouseup', function() {
-            isResizingCuaso3 = false;
-        });
-        // Resize bằng cảm ứng cho cuaso3
-        cuaso3Resize.addEventListener('touchstart', function(e) {
-            if (e.touches.length === 1) {
-                isResizingCuaso3 = true;
-                e.preventDefault();
-                e.stopPropagation();
-            }
-        });
-        document.addEventListener('touchmove', function(e) {
-            if (isResizingCuaso3 && e.touches.length === 1) {
-                let minW = 200, minH = 120;
-                let newW = Math.max(minW, e.touches[0].clientX - cuaso3.offsetLeft);
-                let newH = Math.max(minH, e.touches[0].clientY - cuaso3.offsetTop);
-                cuaso3.style.width = newW + 'px';
-                cuaso3.style.height = newH + 'px';
-            }
-        });
-        document.addEventListener('touchend', function() {
-            isResizingCuaso3 = false;
-        });
+    // Khởi tạo các biến popup trước khi dùng
+    const customWindow = document.getElementById('cuaso1');
+    const cuaso2 = document.getElementById('cuaso2');
+    const cuaso3 = document.getElementById('cuaso3');
+
+    // Resize mới cho popup khi kéo từ cạnh hoặc góc
+    function makeResizable(popup) {
+            let isResizing = false;
+            let startX, startY, startW, startH, dir;
+            // Tạo 8 handle cho 4 cạnh và 4 góc
+            const handles = [
+                {dir:'n', style:'top:-6px;left:50%;transform:translateX(-50%);cursor:n-resize;'},
+                {dir:'s', style:'bottom:-6px;left:50%;transform:translateX(-50%);cursor:s-resize;'},
+                {dir:'e', style:'right:-6px;top:50%;transform:translateY(-50%);cursor:e-resize;'},
+                {dir:'w', style:'left:-6px;top:50%;transform:translateY(-50%);cursor:w-resize;'},
+                {dir:'ne', style:'top:-6px;right:-6px;cursor:ne-resize;'},
+                {dir:'nw', style:'top:-6px;left:-6px;cursor:nw-resize;'},
+                {dir:'se', style:'bottom:-6px;right:-6px;cursor:se-resize;'},
+                {dir:'sw', style:'bottom:-6px;left:-6px;cursor:sw-resize;'}
+            ];
+            handles.forEach(h => {
+                const handle = document.createElement('div');
+                handle.className = 'resize-handle';
+                handle.setAttribute('data-dir', h.dir);
+                // Nếu là góc thì phát sáng mạnh hơn
+                let isCorner = ['nw','ne','sw','se'].includes(h.dir);
+                handle.style.cssText =
+                    'position:absolute;width:14px;height:14px;'
+                    + 'background:rgba(255,255,255,0.18);'
+                    + 'border-radius:50%;'
+                    + 'z-index:100001;'
+                    + (isCorner
+                        ? 'box-shadow:0 0 12px 3px #7ed6fa,0 0 24px 8px #fff8;'
+                        : 'box-shadow:0 0 8px 2px #fff8;')
+                    + 'border:1.5px solid #7ed6fa;'
+                    + 'transition:opacity 0.2s, box-shadow 0.2s;'
+                    + h.style;
+                handle.style.opacity = '0.7';
+                popup.appendChild(handle);
+                // Mouse
+                handle.addEventListener('mousedown', function(e) {
+                    isResizing = true;
+                    dir = h.dir;
+                    startX = e.clientX;
+                    startY = e.clientY;
+                    startW = popup.offsetWidth;
+                    startH = popup.offsetHeight;
+                    // Nếu là góc trái hoặc phải, lưu vị trí popup
+                    if (dir === 'nw' || dir === 'sw') popup._startLeft = popup.offsetLeft;
+                    if (dir === 'ne' || dir === 'se') popup._startLeft = popup.offsetLeft;
+                    if (dir === 'nw' || dir === 'ne') popup._startTop = popup.offsetTop;
+                    if (dir === 'sw' || dir === 'se') popup._startTop = popup.offsetTop;
+                    // Làm mờ các handle khi kéo
+                    Array.from(popup.querySelectorAll('.resize-handle')).forEach(hd => { hd.style.opacity = '0.2'; });
+                    e.preventDefault();
+                    e.stopPropagation();
+                });
+                // Touch
+                handle.addEventListener('touchstart', function(e) {
+                    if (e.touches.length === 1) {
+                        isResizing = true;
+                        dir = h.dir;
+                        startX = e.touches[0].clientX;
+                        startY = e.touches[0].clientY;
+                        startW = popup.offsetWidth;
+                        startH = popup.offsetHeight;
+                        if (dir === 'nw' || dir === 'sw') popup._startLeft = popup.offsetLeft;
+                        if (dir === 'ne' || dir === 'se') popup._startLeft = popup.offsetLeft;
+                        if (dir === 'nw' || dir === 'ne') popup._startTop = popup.offsetTop;
+                        if (dir === 'sw' || dir === 'se') popup._startTop = popup.offsetTop;
+                        Array.from(popup.querySelectorAll('.resize-handle')).forEach(hd => { hd.style.opacity = '0.2'; });
+                        e.preventDefault();
+                        e.stopPropagation();
+                    }
+                });
+            });
+            // Mouse move
+            document.addEventListener('mousemove', function(e) {
+                if (!isResizing) return;
+                let dx = e.clientX - startX;
+                let dy = e.clientY - startY;
+                resizeByDir(popup, dir, dx, dy, startW, startH);
+            });
+            document.addEventListener('mouseup', function() {
+                isResizing = false;
+                // Hiện lại các handle
+                [customWindow, cuaso2, cuaso3].forEach(p => {
+                    if (p) Array.from(p.querySelectorAll('.resize-handle')).forEach(hd => { hd.style.opacity = '1'; });
+                });
+            });
+            // Touch move
+            document.addEventListener('touchmove', function(e) {
+                if (!isResizing || e.touches.length !== 1) return;
+                let dx = e.touches[0].clientX - startX;
+                let dy = e.touches[0].clientY - startY;
+                resizeByDir(popup, dir, dx, dy, startW, startH);
+            });
+            document.addEventListener('touchend', function() {
+                isResizing = false;
+                [customWindow, cuaso2, cuaso3].forEach(p => {
+                    if (p) Array.from(p.querySelectorAll('.resize-handle')).forEach(hd => { hd.style.opacity = '1'; });
+                });
+            });
+        }
+        function resizeByDir(popup, dir, dx, dy, startW, startH) {
+            let minW = 200, minH = 120;
+            let w = startW, h = startH;
+            let left = popup.offsetLeft, top = popup.offsetTop;
+            // Sửa logic cho các góc để không bị ngược
+                if (dir === 'nw') {
+                    w = Math.max(minW, startW - dx);
+                    h = Math.max(minH, startH - dy);
+                    left = popup._startLeft + dx;
+                    top = popup._startTop + dy;
+                } else if (dir === 'ne') {
+                    w = Math.max(minW, startW + dx);
+                    h = Math.max(minH, startH - dy);
+                    top = popup._startTop + dy;
+                } else if (dir === 'sw') {
+                    w = Math.max(minW, startW - dx);
+                    h = Math.max(minH, startH + dy);
+                    left = popup._startLeft + dx;
+                } else if (dir === 'se') {
+                    w = Math.max(minW, startW + dx);
+                    h = Math.max(minH, startH + dy);
+                } else {
+                    if (dir === 'n') {
+                        h = Math.max(minH, startH - dy);
+                        top = popup._startTop + dy;
+                    } else if (dir === 's') {
+                        h = Math.max(minH, startH + dy);
+                    } else if (dir === 'e') {
+                        w = Math.max(minW, startW + dx);
+                    } else if (dir === 'w') {
+                        w = Math.max(minW, startW - dx);
+                        left = popup._startLeft + dx;
+                    }
+                }
+                popup.style.width = w + 'px';
+                popup.style.height = h + 'px';
+                if (dir.includes('w')) popup.style.left = left + 'px';
+                if (dir.includes('n')) popup.style.top = top + 'px';
+        }
+    // Gắn resize cho các popup
+    makeResizable(customWindow);
+    makeResizable(cuaso2);
+    makeResizable(cuaso3);
 			// Nút nut1: hiệu ứng hạt + hiện/tắt popup + ẩn/hiện nut1 img
-			const nut1 = document.getElementById('nut1');
-			const nut1Img = nut1.querySelector('img');
-			const customWindow = document.getElementById('cuaso1');
-			let popupVisible = false;
-			const nut2 = document.getElementById('nut2');
-			const cuaso2 = document.getElementById('cuaso2');
-			let cuaso2Visible = false;
-			const nut3 = document.getElementById('nut3');
-			const cuaso3 = document.getElementById('cuaso3');
-			let cuaso3Visible = false;
+            const nut1 = document.getElementById('nut1');
+            const nut1Img = nut1.querySelector('img');
+            let popupVisible = false;
+            const nut2 = document.getElementById('nut2');
+            let cuaso2Visible = false;
+            const nut3 = document.getElementById('nut3');
+            let cuaso3Visible = false;
             // Chỉ mở popup khi click thực sự, không phải khi kéo/thả
             function isClickEvent(e, btn) {
                 // Nếu là chuột trái và không phải kéo
@@ -334,7 +368,8 @@
             nut1.addEventListener('click', function(e) {
                 if (isClickEvent(e, nut1)) {
                     popupVisible = !popupVisible;
-                    customWindow.style.display = popupVisible ? 'block' : 'none';
+                    zoomPopup(customWindow, popupVisible);
+                    if (popupVisible) autoFitPopup(customWindow);
                 }
                 nut1._dragging = false;
             });
@@ -345,7 +380,8 @@
             nut2.addEventListener('click', function(e) {
                 if (isClickEvent(e, nut2)) {
                     cuaso2Visible = !cuaso2Visible;
-                    cuaso2.style.display = cuaso2Visible ? 'block' : 'none';
+                    zoomPopup(cuaso2, cuaso2Visible);
+                    if (cuaso2Visible) autoFitPopup(cuaso2);
                 }
                 nut2._dragging = false;
             });
@@ -356,7 +392,8 @@
             nut3.addEventListener('click', function(e) {
                 if (isClickEvent(e, nut3)) {
                     cuaso3Visible = !cuaso3Visible;
-                    cuaso3.style.display = cuaso3Visible ? 'block' : 'none';
+                    zoomPopup(cuaso3, cuaso3Visible);
+                    if (cuaso3Visible) autoFitPopup(cuaso3);
                 }
                 nut3._dragging = false;
             });
@@ -610,7 +647,145 @@ function togglePopup(btn, popup, visibleVar) {
     window[visibleVar] = !window[visibleVar];
     popup.style.display = window[visibleVar] ? 'block' : 'none';
 }
+
+// Nút thu nhỏ/mở rộng cho customWindow
+function animateButton(btn, callback) {
+    btn.style.transition = 'box-shadow 0.2s, transform 0.15s, background 0.15s';
+    btn.style.boxShadow = '0 1px 8px rgba(0,0,0,0.22)';
+    btn.style.transform = 'scale(0.96)';
+    btn.style.background = '#e0e0e0';
+    setTimeout(function() {
+        btn.style.boxShadow = '';
+        btn.style.transform = '';
+        btn.style.background = '';
+        if (callback) callback();
+    }, 160);
+}
+document.getElementById('custom-min').onclick = function() {
+    animateButton(this, function() {
+        var content = customWindow.querySelector('.popup-content');
+        if (!content || !content.innerHTML.trim()) {
+            zoomPopup(customWindow, false);
+            popupVisible = false;
+            return;
+        }
+        customWindow.style.transition = 'transform 0.22s cubic-bezier(.4,2,.3,1)';
+        customWindow.style.transform = 'scale(0.7)';
+        setTimeout(function() {
+            customWindow.style.width = '300px';
+            customWindow.style.height = '400px';
+            customWindow.style.transform = 'scale(1)';
+        }, 180);
+    });
+};
+document.getElementById('custom-max').onclick = function() {
+    animateButton(this, function() {
+        customWindow.style.transition = 'transform 0.22s cubic-bezier(.4,2,.3,1)';
+        customWindow.style.transform = 'scale(1.08)';
+        setTimeout(function() {
+            autoFitPopup(customWindow);
+            customWindow.style.transform = 'scale(1)';
+        }, 180);
+    });
+};
+document.getElementById('cuaso2-min').onclick = function() {
+    animateButton(this, function() {
+        var content = cuaso2.querySelector('.popup-content');
+        if (!content || !content.innerHTML.trim()) {
+            zoomPopup(cuaso2, false);
+            cuaso2Visible = false;
+            return;
+        }
+        cuaso2.style.transition = 'transform 0.22s cubic-bezier(.4,2,.3,1)';
+        cuaso2.style.transform = 'scale(0.7)';
+        setTimeout(function() {
+            cuaso2.style.width = '300px';
+            cuaso2.style.height = '400px';
+            cuaso2.style.transform = 'scale(1)';
+        }, 180);
+    });
+};
+document.getElementById('cuaso2-max').onclick = function() {
+    animateButton(this, function() {
+        cuaso2.style.transition = 'transform 0.22s cubic-bezier(.4,2,.3,1)';
+        cuaso2.style.transform = 'scale(1.08)';
+        setTimeout(function() {
+            autoFitPopup(cuaso2);
+            cuaso2.style.transform = 'scale(1)';
+        }, 180);
+    });
+};
+document.getElementById('cuaso3-min').onclick = function() {
+    animateButton(this, function() {
+        var content = cuaso3.querySelector('.popup-content');
+        if (!content || !content.innerHTML.trim()) {
+            zoomPopup(cuaso3, false);
+            cuaso3Visible = false;
+            return;
+        }
+        cuaso3.style.transition = 'transform 0.22s cubic-bezier(.4,2,.3,1)';
+        cuaso3.style.transform = 'scale(0.7)';
+        setTimeout(function() {
+            cuaso3.style.width = '300px';
+            cuaso3.style.height = '400px';
+            cuaso3.style.transform = 'scale(1)';
+        }, 180);
+    });
+};
+document.getElementById('cuaso3-max').onclick = function() {
+    animateButton(this, function() {
+        cuaso3.style.transition = 'transform 0.22s cubic-bezier(.4,2,.3,1)';
+        cuaso3.style.transform = 'scale(1.08)';
+        setTimeout(function() {
+            autoFitPopup(cuaso3);
+            cuaso3.style.transform = 'scale(1)';
+        }, 180);
+    });
+};
 // Đã xử lý ở trên: popup chỉ mở khi click thực sự, không phải khi kéo/thả nút
+
+// Tự động căn chỉnh popup để hiển thị đầy đủ thông tin
+function autoFitPopup(popup) {
+    // Lấy phần nội dung
+    var content = popup.querySelector('.popup-content');
+    if (!content) return;
+    // Đặt lại width/height về auto để đo
+    popup.style.width = '';
+    popup.style.height = '';
+    // Đo kích thước nội dung
+    var rect = content.getBoundingClientRect();
+    var header = popup.querySelector('.popup-header');
+    var headerH = header ? header.offsetHeight : 0;
+    var minW = 300, minH = 120;
+    var padW = 32, padH = 32;
+    var newW = Math.max(minW, rect.width + padW);
+    var newH = Math.max(minH, rect.height + headerH + padH);
+    popup.style.width = newW + 'px';
+    popup.style.height = newH + 'px';
+}
+
+// Hiệu ứng thu phóng khi đóng/mở popup
+function zoomPopup(popup, show, callback) {
+    popup.style.transition = 'transform 0.22s cubic-bezier(.4,2,.3,1), opacity 0.18s';
+    if (show) {
+        popup.style.display = 'block';
+        popup.style.opacity = '0';
+        popup.style.transform = 'scale(0.7)';
+        setTimeout(function() {
+            popup.style.opacity = '1';
+            popup.style.transform = 'scale(1)';
+            if (callback) callback();
+        }, 10);
+    } else {
+        popup.style.opacity = '0';
+        popup.style.transform = 'scale(0.7)';
+        setTimeout(function() {
+            popup.style.display = 'none';
+            popup.style.transform = 'scale(1)';
+            if (callback) callback();
+        }, 180);
+    }
+}
 	</script>
 </body>
 </html>
