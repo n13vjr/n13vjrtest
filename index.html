@@ -119,24 +119,27 @@
 	</video>
 	<!-- Nút -->
 <button id="nut1">
-		<img src="pic/dcl.png" alt="Discord">
-		Discord
-	</button>
-	<button id="nut2">
-		<img src="pic/yt.png" alt="Youtube" style="width:28px; height:28px; border-radius:50%; background:transparent; pointer-events:none;">
-		Youtube
-	</button>
-	<button id="nut3">
-		<img src="pic/Roblox.png" alt="Roblox" style="width:28px; height:28px; border-radius:50%; background:transparent; pointer-events:none;">
-		Roblox
-	</button>
+        <img src="pic/dcl.png" alt="Discord">
+        Discord
+    </button>
+    <button id="nut2">
+        <img src="pic/tyf.png" alt="Youtube" style="width:28px; height:28px; border-radius:50%; background:transparent; pointer-events:none;">
+        MXH
+    </button>
+    <button id="nut3">
+        <img src="pic/Roblox.png" alt="Roblox" style="width:28px; height:28px; border-radius:50%; background:transparent; pointer-events:none;">
+        Roblox
+    </button>
+	<button id="nut4" style="position:absolute; left:100px; top:100px; width:40px; height:40px; border-radius:50%; background:#eee; box-shadow:0 0 8px #aaa; cursor:pointer; z-index:1000; transition:width 0.38s, height 0.38s, left 0.3s, top 0.3s;">
+    <img src="pic/phpls.png" alt="Hidden" style="width:100%; height:100%; border-radius:50%; pointer-events:none; user-select:none;">
+</button>
 	<!-- Popup -->
 	<div id="cuaso1" class="popup" style="top:120px; left:120px;">
     <div id="custom-header" class="popup-header">
         <span id="custom-title" class="popup-title">13th / nerr</span>
         <div style="display:flex; gap:4px;">
-            <button id="custom-min" title="Thu nhỏ" style="width:28px; height:28px; border:none; background:#eee; border-radius:6px; cursor:pointer; font-size:16px;">–</button>
-            <button id="custom-max" title="Mở rộng" style="width:28px; height:28px; border:none; background:#eee; border-radius:6px; cursor:pointer; font-size:16px;">□</button>
+            <button id="custom-min" title="Thu nhỏ" style="width:28px; height:28px; border:none; background:#eee; border-radius:50%; cursor:pointer; font-size:18px; font-weight:bold; display:flex; align-items:center; justify-content:center; box-shadow:0 0 0 2px #222;">●</button>
+            <button id="custom-max" title="Mở rộng" style="width:28px; height:28px; border:none; background:#eee; border-radius:6px; cursor:pointer; font-size:18px; font-weight:bold; display:flex; align-items:center; justify-content:center; box-shadow:0 0 0 2px #222;">■</button>
         </div>
     </div>
     <div id="custom-content" class="popup-content">
@@ -157,21 +160,36 @@
 </div>
 <div id="cuaso2" class="popup" style="top:180px; left:180px;">
     <div id="cuaso2-header" class="popup-header">
-        <span id="cuaso2-title" class="popup-title">Cửa sổ 2 mờ 300x400px</span>
+        <span id="cuaso2-title" class="popup-title">MẠNG XÃ HỘI</span>
         <div style="display:flex; gap:4px;">
-            <button id="cuaso2-min" title="Thu nhỏ" style="width:28px; height:28px; border:none; background:#eee; border-radius:6px; cursor:pointer; font-size:16px;">–</button>
-            <button id="cuaso2-max" title="Mở rộng" style="width:28px; height:28px; border:none; background:#eee; border-radius:6px; cursor:pointer; font-size:16px;">□</button>
+            <button id="cuaso2-min" title="Thu nhỏ" style="width:28px; height:28px; border:none; background:#eee; border-radius:50%; cursor:pointer; font-size:18px; font-weight:bold; display:flex; align-items:center; justify-content:center; box-shadow:0 0 0 2px #222;">●</button>
+            <button id="cuaso2-max" title="Mở rộng" style="width:28px; height:28px; border:none; background:#eee; border-radius:6px; cursor:pointer; font-size:18px; font-weight:bold; display:flex; align-items:center; justify-content:center; box-shadow:0 0 0 2px #222;">■</button>
         </div>
     </div>
-    <div id="cuaso2-content" class="popup-content">Nội dung cửa sổ 2...</div>
+    <div id="cuaso2-content" class="popup-content">
+        <!-- Content 1: Youtube channel -->
+            <a href="https://www.youtube.com/@n13vjr" target="_blank" style="display:flex; align-items:center; gap:10px; margin-bottom:16px; text-decoration:none; color:#ff0000;">
+                <img src="pic/avyt.jpg" alt="Youtube" style="width:48px; height:48px; border-radius:12px; object-fit:cover;">
+                <span style="font-size:20px; font-weight:bold;">n13vjr Youtube Channel</span>
+            </a>
+            <!-- Custom content: 2 dòng liên kết và hình ảnh -->
+            <a href="https://discordapp.com/users/1115398524805324941" target="_blank" style="display:flex; align-items:center; gap:10px; margin-bottom:12px; text-decoration:none; color:#b31de0;">
+                <img src="pic/avtt.jpeg" alt="Tiktok" style="width:48px; height:48px; border-radius:12px; object-fit:cover;">
+                <span style="font-size:18px; font-weight:bold;">n13vjr Tiktok Channel</span>
+            </a>
+            <a href="https://discord.gg/9pPNkKGxsq" target="_blank" style="display:flex; align-items:center; gap:10px; margin-bottom:12px; text-decoration:none; color:#0015ff;">
+                <img src="pic/avfb.jpg" alt="Facebook" style="width:48px; height:48px; border-radius:12px; object-fit:cover;">
+                <span style="font-size:18px; font-weight:bold;">n13vjr Facebook</span>
+            </a>
+    </div>
     <!-- Xóa handle cũ, đã có handle mới tự động tạo -->
 </div>
 <div id="cuaso3" class="popup" style="top:240px; left:240px;">
     <div id="cuaso3-header" class="popup-header">
         <span id="cuaso3-title" class="popup-title">My Roblox Accounts(21)</span>
         <div style="display:flex; gap:4px;">
-            <button id="cuaso3-min" title="Thu nhỏ" style="width:28px; height:28px; border:none; background:#eee; border-radius:6px; cursor:pointer; font-size:16px;">–</button>
-            <button id="cuaso3-max" title="Mở rộng" style="width:28px; height:28px; border:none; background:#eee; border-radius:6px; cursor:pointer; font-size:16px;">□</button>
+            <button id="cuaso3-min" title="Thu nhỏ" style="width:28px; height:28px; border:none; background:#eee; border-radius:50%; cursor:pointer; font-size:18px; font-weight:bold; display:flex; align-items:center; justify-content:center; box-shadow:0 0 0 2px #222;">●</button>
+            <button id="cuaso3-max" title="Mở rộng" style="width:28px; height:28px; border:none; background:#eee; border-radius:6px; cursor:pointer; font-size:18px; font-weight:bold; display:flex; align-items:center; justify-content:center; box-shadow:0 0 0 2px #222;">■</button>
         </div>
     </div>
     <div id="cuaso3-content" class="popup-content">
@@ -200,154 +218,25 @@
     </div>
     <!-- Xóa handle cũ, đã có handle mới tự động tạo -->
 </div>
+	<!-- Thêm phần audio vào HTML -->
+<audio id="nut4-audio" src="sound/wallet.mp3" preload="auto"></audio>
+<!-- Thêm audio cho popup mở/tắt -->
+<audio id="popup1-open-audio" src="sound/mo.wav" preload="auto"></audio>
+<audio id="popup1-close-audio" src="sound/tat.wav" preload="auto"></audio>
+<audio id="popup2-open-audio" src="sound/mo.wav" preload="auto"></audio>
+<audio id="popup2-close-audio" src="sound/tat.wav" preload="auto"></audio>
+<audio id="popup3-open-audio" src="sound/bt.mp3" preload="auto"></audio>
+<audio id="popup3-close-audio" src="sound/bt.mp3" preload="auto"></audio>
+<!-- Thêm audio cho nút phóng to/thu nhỏ popup -->
+<audio id="popup-zoom-audio" src="sound/phongto.wav" preload="auto"></audio>
+<audio id="popup-min-audio" src="sound/thunho.wav" preload="auto"></audio>
 	<script>
     // Khởi tạo các biến popup trước khi dùng
     const customWindow = document.getElementById('cuaso1');
     const cuaso2 = document.getElementById('cuaso2');
     const cuaso3 = document.getElementById('cuaso3');
 
-    // Resize mới cho popup khi kéo từ cạnh hoặc góc
-    function makeResizable(popup) {
-            let isResizing = false;
-            let startX, startY, startW, startH, dir;
-            // Tạo 8 handle cho 4 cạnh và 4 góc
-            const handles = [
-                {dir:'n', style:'top:-6px;left:50%;transform:translateX(-50%);cursor:n-resize;'},
-                {dir:'s', style:'bottom:-6px;left:50%;transform:translateX(-50%);cursor:s-resize;'},
-                {dir:'e', style:'right:-6px;top:50%;transform:translateY(-50%);cursor:e-resize;'},
-                {dir:'w', style:'left:-6px;top:50%;transform:translateY(-50%);cursor:w-resize;'},
-                {dir:'ne', style:'top:-6px;right:-6px;cursor:ne-resize;'},
-                {dir:'nw', style:'top:-6px;left:-6px;cursor:nw-resize;'},
-                {dir:'se', style:'bottom:-6px;right:-6px;cursor:se-resize;'},
-                {dir:'sw', style:'bottom:-6px;left:-6px;cursor:sw-resize;'}
-            ];
-            handles.forEach(h => {
-                const handle = document.createElement('div');
-                handle.className = 'resize-handle';
-                handle.setAttribute('data-dir', h.dir);
-                // Nếu là góc thì phát sáng mạnh hơn
-                let isCorner = ['nw','ne','sw','se'].includes(h.dir);
-                handle.style.cssText =
-                    'position:absolute;width:14px;height:14px;'
-                    + 'background:rgba(255,255,255,0.18);'
-                    + 'border-radius:50%;'
-                    + 'z-index:100001;'
-                    + (isCorner
-                        ? 'box-shadow:0 0 12px 3px #7ed6fa,0 0 24px 8px #fff8;'
-                        : 'box-shadow:0 0 8px 2px #fff8;')
-                    + 'border:1.5px solid #7ed6fa;'
-                    + 'transition:opacity 0.2s, box-shadow 0.2s;'
-                    + h.style;
-                handle.style.opacity = '0.7';
-                popup.appendChild(handle);
-                // Mouse
-                handle.addEventListener('mousedown', function(e) {
-                    isResizing = true;
-                    dir = h.dir;
-                    startX = e.clientX;
-                    startY = e.clientY;
-                    startW = popup.offsetWidth;
-                    startH = popup.offsetHeight;
-                    // Nếu là góc trái hoặc phải, lưu vị trí popup
-                    if (dir === 'nw' || dir === 'sw') popup._startLeft = popup.offsetLeft;
-                    if (dir === 'ne' || dir === 'se') popup._startLeft = popup.offsetLeft;
-                    if (dir === 'nw' || dir === 'ne') popup._startTop = popup.offsetTop;
-                    if (dir === 'sw' || dir === 'se') popup._startTop = popup.offsetTop;
-                    // Làm mờ các handle khi kéo
-                    Array.from(popup.querySelectorAll('.resize-handle')).forEach(hd => { hd.style.opacity = '0.2'; });
-                    e.preventDefault();
-                    e.stopPropagation();
-                });
-                // Touch
-                handle.addEventListener('touchstart', function(e) {
-                    if (e.touches.length === 1) {
-                        isResizing = true;
-                        dir = h.dir;
-                        startX = e.touches[0].clientX;
-                        startY = e.touches[0].clientY;
-                        startW = popup.offsetWidth;
-                        startH = popup.offsetHeight;
-                        if (dir === 'nw' || dir === 'sw') popup._startLeft = popup.offsetLeft;
-                        if (dir === 'ne' || dir === 'se') popup._startLeft = popup.offsetLeft;
-                        if (dir === 'nw' || dir === 'ne') popup._startTop = popup.offsetTop;
-                        if (dir === 'sw' || dir === 'se') popup._startTop = popup.offsetTop;
-                        Array.from(popup.querySelectorAll('.resize-handle')).forEach(hd => { hd.style.opacity = '0.2'; });
-                        e.preventDefault();
-                        e.stopPropagation();
-                    }
-                });
-            });
-            // Mouse move
-            document.addEventListener('mousemove', function(e) {
-                if (!isResizing) return;
-                let dx = e.clientX - startX;
-                let dy = e.clientY - startY;
-                resizeByDir(popup, dir, dx, dy, startW, startH);
-            });
-            document.addEventListener('mouseup', function() {
-                isResizing = false;
-                // Hiện lại các handle
-                [customWindow, cuaso2, cuaso3].forEach(p => {
-                    if (p) Array.from(p.querySelectorAll('.resize-handle')).forEach(hd => { hd.style.opacity = '1'; });
-                });
-            });
-            // Touch move
-            document.addEventListener('touchmove', function(e) {
-                if (!isResizing || e.touches.length !== 1) return;
-                let dx = e.touches[0].clientX - startX;
-                let dy = e.touches[0].clientY - startY;
-                resizeByDir(popup, dir, dx, dy, startW, startH);
-            });
-            document.addEventListener('touchend', function() {
-                isResizing = false;
-                [customWindow, cuaso2, cuaso3].forEach(p => {
-                    if (p) Array.from(p.querySelectorAll('.resize-handle')).forEach(hd => { hd.style.opacity = '1'; });
-                });
-            });
-        }
-        function resizeByDir(popup, dir, dx, dy, startW, startH) {
-            let minW = 200, minH = 120;
-            let w = startW, h = startH;
-            let left = popup.offsetLeft, top = popup.offsetTop;
-            // Sửa logic cho các góc để không bị ngược
-                if (dir === 'nw') {
-                    w = Math.max(minW, startW - dx);
-                    h = Math.max(minH, startH - dy);
-                    left = popup._startLeft + dx;
-                    top = popup._startTop + dy;
-                } else if (dir === 'ne') {
-                    w = Math.max(minW, startW + dx);
-                    h = Math.max(minH, startH - dy);
-                    top = popup._startTop + dy;
-                } else if (dir === 'sw') {
-                    w = Math.max(minW, startW - dx);
-                    h = Math.max(minH, startH + dy);
-                    left = popup._startLeft + dx;
-                } else if (dir === 'se') {
-                    w = Math.max(minW, startW + dx);
-                    h = Math.max(minH, startH + dy);
-                } else {
-                    if (dir === 'n') {
-                        h = Math.max(minH, startH - dy);
-                        top = popup._startTop + dy;
-                    } else if (dir === 's') {
-                        h = Math.max(minH, startH + dy);
-                    } else if (dir === 'e') {
-                        w = Math.max(minW, startW + dx);
-                    } else if (dir === 'w') {
-                        w = Math.max(minW, startW - dx);
-                        left = popup._startLeft + dx;
-                    }
-                }
-                popup.style.width = w + 'px';
-                popup.style.height = h + 'px';
-                if (dir.includes('w')) popup.style.left = left + 'px';
-                if (dir.includes('n')) popup.style.top = top + 'px';
-        }
-    // Gắn resize cho các popup
-    makeResizable(customWindow);
-    makeResizable(cuaso2);
-    makeResizable(cuaso3);
+    // Đã xóa toàn bộ mã resize khỏi các popup
 			// Nút nut1: hiệu ứng hạt + hiện/tắt popup + ẩn/hiện nut1 img
             const nut1 = document.getElementById('nut1');
             const nut1Img = nut1.querySelector('img');
@@ -358,7 +247,6 @@
             let cuaso3Visible = false;
             // Chỉ mở popup khi click thực sự, không phải khi kéo/thả
             function isClickEvent(e, btn) {
-                // Nếu là chuột trái và không phải kéo
                 return e.type === 'click' && !btn._dragging;
             }
 
@@ -367,44 +255,35 @@
             nut1.addEventListener('mousemove', function(e) { nut1._dragging = true; });
             nut1.addEventListener('click', function(e) {
                 if (isClickEvent(e, nut1)) {
-                    popupVisible = !popupVisible;
-                    zoomPopup(customWindow, popupVisible);
+                    togglePopup(nut1, customWindow, 'popupVisible');
                     if (popupVisible) autoFitPopup(customWindow);
                 }
                 nut1._dragging = false;
             });
+nut2.addEventListener('click', function(e) {
+    if (isClickEvent(e, nut2)) {
+        togglePopup(nut2, cuaso2, 'cuaso2Visible');
+        if (cuaso2Visible) autoFitPopup(cuaso2);
+    }
+    nut2._dragging = false;
+});
+nut3.addEventListener('click', function(e) {
+    if (isClickEvent(e, nut3)) {
+        togglePopup(nut3, cuaso3, 'cuaso3Visible');
+        if (cuaso3Visible) autoFitPopup(cuaso3);
+    }
+    nut3._dragging = false;
+});
 
-            nut2._dragging = false;
-            nut2.addEventListener('mousedown', function(e) { nut2._dragging = false; });
-            nut2.addEventListener('mousemove', function(e) { nut2._dragging = true; });
-            nut2.addEventListener('click', function(e) {
-                if (isClickEvent(e, nut2)) {
-                    cuaso2Visible = !cuaso2Visible;
-                    zoomPopup(cuaso2, cuaso2Visible);
-                    if (cuaso2Visible) autoFitPopup(cuaso2);
-                }
-                nut2._dragging = false;
-            });
-
-            nut3._dragging = false;
-            nut3.addEventListener('mousedown', function(e) { nut3._dragging = false; });
-            nut3.addEventListener('mousemove', function(e) { nut3._dragging = true; });
-            nut3.addEventListener('click', function(e) {
-                if (isClickEvent(e, nut3)) {
-                    cuaso3Visible = !cuaso3Visible;
-                    zoomPopup(cuaso3, cuaso3Visible);
-                    if (cuaso3Visible) autoFitPopup(cuaso3);
-                }
-                nut3._dragging = false;
-            });
 			// Kéo di chuyển cửa sổ custom
 			const customHeader = document.getElementById('custom-header');
 			let isDraggingCustom = false, offsetXCustom = 0, offsetYCustom = 0;
 			customHeader.addEventListener('mousedown', function(e) {
-				isDraggingCustom = true;
-				offsetXCustom = e.clientX - customWindow.offsetLeft;
-				offsetYCustom = e.clientY - customWindow.offsetTop;
-				customHeader.style.cursor = 'grabbing';
+                if (customWindow._isResizing) return;
+                isDraggingCustom = true;
+                offsetXCustom = e.clientX - customWindow.offsetLeft;
+                offsetYCustom = e.clientY - customWindow.offsetTop;
+                customHeader.style.cursor = 'grabbing';
 			});
 			document.addEventListener('mousemove', function(e) {
 				if (isDraggingCustom) {
@@ -420,10 +299,11 @@
 			const cuaso2Header = document.getElementById('cuaso2-header');
 			let isDraggingCuaso2 = false, offsetXCuaso2 = 0, offsetYCuaso2 = 0;
 			cuaso2Header.addEventListener('mousedown', function(e) {
-				isDraggingCuaso2 = true;
-				offsetXCuaso2 = e.clientX - cuaso2.offsetLeft;
-				offsetYCuaso2 = e.clientY - cuaso2.offsetTop;
-				cuaso2Header.style.cursor = 'grabbing';
+                if (cuaso2._isResizing) return;
+                isDraggingCuaso2 = true;
+                offsetXCuaso2 = e.clientX - cuaso2.offsetLeft;
+                offsetYCuaso2 = e.clientY - cuaso2.offsetTop;
+                cuaso2Header.style.cursor = 'grabbing';
 			});
 			document.addEventListener('mousemove', function(e) {
 				if (isDraggingCuaso2) {
@@ -439,10 +319,11 @@
 			const cuaso3Header = document.getElementById('cuaso3-header');
 			let isDraggingCuaso3 = false, offsetXCuaso3 = 0, offsetYCuaso3 = 0;
 			cuaso3Header.addEventListener('mousedown', function(e) {
-				isDraggingCuaso3 = true;
-				offsetXCuaso3 = e.clientX - cuaso3.offsetLeft;
-				offsetYCuaso3 = e.clientY - cuaso3.offsetTop;
-				cuaso3Header.style.cursor = 'grabbing';
+                if (cuaso3._isResizing) return;
+                isDraggingCuaso3 = true;
+                offsetXCuaso3 = e.clientX - cuaso3.offsetLeft;
+                offsetYCuaso3 = e.clientY - cuaso3.offsetTop;
+                cuaso3Header.style.cursor = 'grabbing';
 			});
 			document.addEventListener('mousemove', function(e) {
 				if (isDraggingCuaso3) {
@@ -456,7 +337,7 @@
 			});
 			// Thêm hỗ trợ kéo cửa sổ bằng cảm ứng (touch) cho customWindow
 			customHeader.addEventListener('touchstart', function(e) {
-    if (e.touches.length === 1) {
+    if (e.touches.length === 1 && !customWindow._isResizing) {
         isDraggingCustom = true;
         offsetXCustom = e.touches[0].clientX - customWindow.offsetLeft;
         offsetYCustom = e.touches[0].clientY - customWindow.offsetTop;
@@ -475,7 +356,7 @@ document.addEventListener('touchend', function() {
 });
 // Thêm hỗ trợ kéo cửa sổ bằng cảm ứng (touch) cho cuaso2
 cuaso2Header.addEventListener('touchstart', function(e) {
-    if (e.touches.length === 1) {
+    if (e.touches.length === 1 && !cuaso2._isResizing) {
         isDraggingCuaso2 = true;
         offsetXCuaso2 = e.touches[0].clientX - cuaso2.offsetLeft;
         offsetYCuaso2 = e.touches[0].clientY - cuaso2.offsetTop;
@@ -494,7 +375,7 @@ document.addEventListener('touchend', function() {
 });
 // Thêm hỗ trợ kéo cửa sổ bằng cảm ứng (touch) cho cuaso3
 cuaso3Header.addEventListener('touchstart', function(e) {
-    if (e.touches.length === 1) {
+    if (e.touches.length === 1 && !cuaso3._isResizing) {
         isDraggingCuaso3 = true;
         offsetXCuaso3 = e.touches[0].clientX - cuaso3.offsetLeft;
         offsetYCuaso3 = e.touches[0].clientY - cuaso3.offsetTop;
@@ -511,143 +392,160 @@ document.addEventListener('touchend', function() {
     isDraggingCuaso3 = false;
     cuaso3Header.style.cursor = 'move';
 });
-		// Kéo di chuyển nút nut1
-let isDraggingNut1 = false, offsetXNut1 = 0, offsetYNut1 = 0;
-nut1.addEventListener('mousedown', function(e) {
-    isDraggingNut1 = true;
-    offsetXNut1 = e.clientX - nut1.offsetLeft;
-    offsetYNut1 = e.clientY - nut1.offsetTop;
-    nut1.style.cursor = 'grabbing';
-});
-document.addEventListener('mousemove', function(e) {
-    if (isDraggingNut1) {
-        nut1.style.left = (e.clientX - offsetXNut1) + 'px';
-        nut1.style.top = (e.clientY - offsetYNut1) + 'px';
-        nut1.style.right = '';
-        nut1.style.bottom = '';
-        nut1.style.position = 'fixed';
-    }
-});
-document.addEventListener('mouseup', function() {
-    isDraggingNut1 = false;
-    nut1.style.cursor = 'pointer';
-});
-// Kéo di chuyển nút nut2
-let isDraggingNut2 = false, offsetXNut2 = 0, offsetYNut2 = 0;
-nut2.addEventListener('mousedown', function(e) {
-    isDraggingNut2 = true;
-    offsetXNut2 = e.clientX - nut2.offsetLeft;
-    offsetYNut2 = e.clientY - nut2.offsetTop;
-    nut2.style.cursor = 'grabbing';
-});
-document.addEventListener('mousemove', function(e) {
-    if (isDraggingNut2) {
-        nut2.style.left = (e.clientX - offsetXNut2) + 'px';
-        nut2.style.top = (e.clientY - offsetYNut2) + 'px';
-        nut2.style.right = '';
-        nut2.style.bottom = '';
-        nut2.style.position = 'fixed';
-        nut2.style.transform = '';
-    }
-});
-document.addEventListener('mouseup', function() {
-    isDraggingNut2 = false;
-    nut2.style.cursor = 'pointer';
-});
-// Kéo di chuyển nút nut3
-let isDraggingNut3 = false, offsetXNut3 = 0, offsetYNut3 = 0;
-nut3.addEventListener('mousedown', function(e) {
-    isDraggingNut3 = true;
-    offsetXNut3 = e.clientX - nut3.offsetLeft;
-    offsetYNut3 = e.clientY - nut3.offsetTop;
-    nut3.style.cursor = 'grabbing';
-});
-document.addEventListener('mousemove', function(e) {
-    if (isDraggingNut3) {
-        nut3.style.left = (e.clientX - offsetXNut3) + 'px';
-        nut3.style.top = (e.clientY - offsetYNut3) + 'px';
-        nut3.style.right = '';
-        nut3.style.bottom = '';
-        nut3.style.position = 'fixed';
-    }
-});
-document.addEventListener('mouseup', function() {
-    isDraggingNut3 = false;
-    nut3.style.cursor = 'pointer';
-});
-// Hỗ trợ kéo bằng cảm ứng cho nut1
-nut1.addEventListener('touchstart', function(e) {
-    if (e.touches.length === 1) {
-        isDraggingNut1 = true;
-        offsetXNut1 = e.touches[0].clientX - nut1.offsetLeft;
-        offsetYNut1 = e.touches[0].clientY - nut1.offsetTop;
-        nut1.style.cursor = 'grabbing';
-    }
-});
-document.addEventListener('touchmove', function(e) {
-    if (isDraggingNut1 && e.touches.length === 1) {
-        nut1.style.left = (e.touches[0].clientX - offsetXNut1) + 'px';
-        nut1.style.top = (e.touches[0].clientY - offsetYNut1) + 'px';
-        nut1.style.right = '';
-        nut1.style.bottom = '';
-        nut1.style.position = 'fixed';
-    }
-});
-document.addEventListener('touchend', function() {
-    isDraggingNut1 = false;
-    nut1.style.cursor = 'pointer';
-});
-// Hỗ trợ kéo bằng cảm ứng cho nut2
-nut2.addEventListener('touchstart', function(e) {
-    if (e.touches.length === 1) {
-        isDraggingNut2 = true;
-        offsetXNut2 = e.touches[0].clientX - nut2.offsetLeft;
-        offsetYNut2 = e.touches[0].clientY - nut2.offsetTop;
-        nut2.style.cursor = 'grabbing';
-    }
-});
-document.addEventListener('touchmove', function(e) {
-    if (isDraggingNut2 && e.touches.length === 1) {
-        nut2.style.left = (e.touches[0].clientX - offsetXNut2) + 'px';
-        nut2.style.top = (e.touches[0].clientY - offsetYNut2) + 'px';
-        nut2.style.right = '';
-        nut2.style.bottom = '';
-        nut2.style.position = 'fixed';
-        nut2.style.transform = '';
-    }
-});
-document.addEventListener('touchend', function() {
-    isDraggingNut2 = false;
-    nut2.style.cursor = 'pointer';
-});
-// Hỗ trợ kéo bằng cảm ứng cho nut3
-nut3.addEventListener('touchstart', function(e) {
-    if (e.touches.length === 1) {
-        isDraggingNut3 = true;
-        offsetXNut3 = e.touches[0].clientX - nut3.offsetLeft;
-        offsetYNut3 = e.touches[0].clientY - nut3.offsetTop;
-        nut3.style.cursor = 'grabbing';
-    }
-});
-document.addEventListener('touchmove', function(e) {
-    if (isDraggingNut3 && e.touches.length === 1) {
-        nut3.style.left = (e.touches[0].clientX - offsetXNut3) + 'px';
-        nut3.style.top = (e.touches[0].clientY - offsetYNut3) + 'px';
-        nut3.style.right = '';
-        nut3.style.bottom = '';
-        nut3.style.position = 'fixed';
-    }
-});
-document.addEventListener('touchend', function() {
-    isDraggingNut3 = false;
-    nut3.style.cursor = 'pointer';
-});
+        // Kéo di chuyển nút nut1
+        let isDraggingNut1 = false, offsetXNut1 = 0, offsetYNut1 = 0;
+        nut1.addEventListener('mousedown', function(e) {
+            isDraggingNut1 = true;
+            offsetXNut1 = e.clientX - nut1.offsetLeft;
+            offsetYNut1 = e.clientY - nut1.offsetTop;
+            nut1.style.cursor = 'grabbing';
+        });
+        document.addEventListener('mousemove', function(e) {
+            if (isDraggingNut1) {
+                nut1.style.left = (e.clientX - offsetXNut1) + 'px';
+                nut1.style.top = (e.clientY - offsetYNut1) + 'px';
+                nut1.style.right = '';
+                nut1.style.bottom = '';
+                nut1.style.position = 'fixed';
+            }
+        });
+        document.addEventListener('mouseup', function() {
+            isDraggingNut1 = false;
+            nut1.style.cursor = 'pointer';
+        });
+        // Kéo di chuyển nút nut2
+        let isDraggingNut2 = false, offsetXNut2 = 0, offsetYNut2 = 0;
+        nut2.addEventListener('mousedown', function(e) {
+            isDraggingNut2 = true;
+            offsetXNut2 = e.clientX - nut2.offsetLeft;
+            offsetYNut2 = e.clientY - nut2.offsetTop;
+            nut2.style.cursor = 'grabbing';
+        });
+        document.addEventListener('mousemove', function(e) {
+            if (isDraggingNut2) {
+                nut2.style.left = (e.clientX - offsetXNut2) + 'px';
+                nut2.style.top = (e.clientY - offsetYNut2) + 'px';
+                nut2.style.right = '';
+                nut2.style.bottom = '';
+                nut2.style.position = 'fixed';
+                nut2.style.transform = '';
+            }
+        });
+        document.addEventListener('mouseup', function() {
+            isDraggingNut2 = false;
+            nut2.style.cursor = 'pointer';
+        });
+        // Kéo di chuyển nút nut3
+        let isDraggingNut3 = false, offsetXNut3 = 0, offsetYNut3 = 0;
+        nut3.addEventListener('mousedown', function(e) {
+            isDraggingNut3 = true;
+            offsetXNut3 = e.clientX - nut3.offsetLeft;
+            offsetYNut3 = e.clientY - nut3.offsetTop;
+            nut3.style.cursor = 'grabbing';
+        });
+        document.addEventListener('mousemove', function(e) {
+            if (isDraggingNut3) {
+                nut3.style.left = (e.clientX - offsetXNut3) + 'px';
+                nut3.style.top = (e.clientY - offsetYNut3) + 'px';
+                nut3.style.right = '';
+                nut3.style.bottom = '';
+                nut3.style.position = 'fixed';
+            }
+        });
+        document.addEventListener('mouseup', function() {
+            isDraggingNut3 = false;
+            nut3.style.cursor = 'pointer';
+        });
+        // Hỗ trợ kéo bằng cảm ứng cho nut1
+        nut1.addEventListener('touchstart', function(e) {
+            if (e.touches.length === 1) {
+                isDraggingNut1 = true;
+                offsetXNut1 = e.touches[0].clientX - nut1.offsetLeft;
+                offsetYNut1 = e.touches[0].clientY - nut1.offsetTop;
+                nut1.style.cursor = 'grabbing';
+            }
+        });
+        document.addEventListener('touchmove', function(e) {
+            if (isDraggingNut1 && e.touches.length === 1) {
+                nut1.style.left = (e.touches[0].clientX - offsetXNut1) + 'px';
+                nut1.style.top = (e.touches[0].clientY - offsetYNut1) + 'px';
+                nut1.style.right = '';
+                nut1.style.bottom = '';
+                nut1.style.position = 'fixed';
+            }
+        });
+        document.addEventListener('touchend', function() {
+            isDraggingNut1 = false;
+            nut1.style.cursor = 'pointer';
+        });
+        // Hỗ trợ kéo bằng cảm ứng cho nut2
+        nut2.addEventListener('touchstart', function(e) {
+            if (e.touches.length === 1) {
+                isDraggingNut2 = true;
+                offsetXNut2 = e.touches[0].clientX - nut2.offsetLeft;
+                offsetYNut2 = e.touches[0].clientY - nut2.offsetTop;
+                nut2.style.cursor = 'grabbing';
+            }
+        });
+        document.addEventListener('touchmove', function(e) {
+            if (isDraggingNut2 && e.touches.length === 1) {
+                nut2.style.left = (e.touches[0].clientX - offsetXNut2) + 'px';
+                nut2.style.top = (e.touches[0].clientY - offsetYNut2) + 'px';
+                nut2.style.right = '';
+                nut2.style.bottom = '';
+                nut2.style.position = 'fixed';
+                nut2.style.transform = '';
+            }
+        });
+        document.addEventListener('touchend', function() {
+            isDraggingNut2 = false;
+            nut2.style.cursor = 'pointer';
+        });
+        // Hỗ trợ kéo bằng cảm ứng cho nut3
+        nut3.addEventListener('touchstart', function(e) {
+            if (e.touches.length === 1) {
+                isDraggingNut3 = true;
+                offsetXNut3 = e.touches[0].clientX - nut3.offsetLeft;
+                offsetYNut3 = e.touches[0].clientY - nut3.offsetTop;
+                nut3.style.cursor = 'grabbing';
+            }
+        });
+        document.addEventListener('touchmove', function(e) {
+            if (isDraggingNut3 && e.touches.length === 1) {
+                nut3.style.left = (e.touches[0].clientX - offsetXNut3) + 'px';
+                nut3.style.top = (e.touches[0].clientY - offsetYNut3) + 'px';
+                nut3.style.right = '';
+                nut3.style.bottom = '';
+                nut3.style.position = 'fixed';
+            }
+        });
+        document.addEventListener('touchend', function() {
+            isDraggingNut3 = false;
+            nut3.style.cursor = 'pointer';
+        });
 // Rút gọn JS cho nút
 function togglePopup(btn, popup, visibleVar) {
     window[visibleVar] = !window[visibleVar];
-    popup.style.display = window[visibleVar] ? 'block' : 'none';
+    if (window[visibleVar]) {
+        zoomPopup(popup, true);
+    } else {
+        zoomPopup(popup, false);
+    }
 }
 
+// Đảm bảo phát âm thanh tức thì, không bị delay hoặc lỗi promise
+function playAudioInstant(id) {
+    var audio = document.getElementById(id);
+    if (!audio) return;
+    try {
+        audio.pause();
+        audio.currentTime = 0;
+        var playPromise = audio.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(function(){});
+        }
+    } catch(e) {}
+}
 // Nút thu nhỏ/mở rộng cho customWindow
 function animateButton(btn, callback) {
     btn.style.transition = 'box-shadow 0.2s, transform 0.15s, background 0.15s';
@@ -669,23 +567,28 @@ document.getElementById('custom-min').onclick = function() {
             popupVisible = false;
             return;
         }
-        customWindow.style.transition = 'transform 0.22s cubic-bezier(.4,2,.3,1)';
-        customWindow.style.transform = 'scale(0.7)';
+        customWindow.style.transition = 'transform 0.38s cubic-bezier(.4,1.6,.3,1)';
+        customWindow.style.transform = 'scale(0.75)';
         setTimeout(function() {
-            customWindow.style.width = '300px';
-            customWindow.style.height = '400px';
+            customWindow.style.width = (300 * 0.75) + 'px';
+            customWindow.style.height = (400 * 0.75) + 'px';
             customWindow.style.transform = 'scale(1)';
-        }, 180);
+            document.getElementById('custom-min').style.boxShadow = '0 0 0 4px #222, 0 0 8px 2px #7ed6fa';
+            document.getElementById('custom-max').style.boxShadow = '';
+        }, 320);
     });
 };
 document.getElementById('custom-max').onclick = function() {
     animateButton(this, function() {
-        customWindow.style.transition = 'transform 0.22s cubic-bezier(.4,2,.3,1)';
-        customWindow.style.transform = 'scale(1.08)';
+        customWindow.style.transition = 'transform 0.38s cubic-bezier(.4,1.6,.3,1)';
+        customWindow.style.transform = 'scale(2)';
         setTimeout(function() {
-            autoFitPopup(customWindow);
+            customWindow.style.width = '600px';
+            customWindow.style.height = '800px';
             customWindow.style.transform = 'scale(1)';
-        }, 180);
+            document.getElementById('custom-max').style.boxShadow = '0 0 0 4px #222, 0 0 8px 2px #7ed6fa';
+            document.getElementById('custom-min').style.boxShadow = '';
+        }, 320);
     });
 };
 document.getElementById('cuaso2-min').onclick = function() {
@@ -696,23 +599,28 @@ document.getElementById('cuaso2-min').onclick = function() {
             cuaso2Visible = false;
             return;
         }
-        cuaso2.style.transition = 'transform 0.22s cubic-bezier(.4,2,.3,1)';
-        cuaso2.style.transform = 'scale(0.7)';
+        cuaso2.style.transition = 'transform 0.38s cubic-bezier(.4,1.6,.3,1)';
+        cuaso2.style.transform = 'scale(0.75)';
         setTimeout(function() {
-            cuaso2.style.width = '300px';
-            cuaso2.style.height = '400px';
+            cuaso2.style.width = (300 * 0.75) + 'px';
+            cuaso2.style.height = (400 * 0.75) + 'px';
             cuaso2.style.transform = 'scale(1)';
-        }, 180);
+            document.getElementById('cuaso2-min').style.boxShadow = '0 0 0 4px #222, 0 0 8px 2px #7ed6fa';
+            document.getElementById('cuaso2-max').style.boxShadow = '';
+        }, 320);
     });
 };
 document.getElementById('cuaso2-max').onclick = function() {
     animateButton(this, function() {
-        cuaso2.style.transition = 'transform 0.22s cubic-bezier(.4,2,.3,1)';
-        cuaso2.style.transform = 'scale(1.08)';
+        cuaso2.style.transition = 'transform 0.38s cubic-bezier(.4,1.6,.3,1)';
+        cuaso2.style.transform = 'scale(2)';
         setTimeout(function() {
-            autoFitPopup(cuaso2);
+            cuaso2.style.width = '600px';
+            cuaso2.style.height = '800px';
             cuaso2.style.transform = 'scale(1)';
-        }, 180);
+            document.getElementById('cuaso2-max').style.boxShadow = '0 0 0 4px #222, 0 0 8px 2px #7ed6fa';
+            document.getElementById('cuaso2-min').style.boxShadow = '';
+        }, 320);
     });
 };
 document.getElementById('cuaso3-min').onclick = function() {
@@ -723,23 +631,28 @@ document.getElementById('cuaso3-min').onclick = function() {
             cuaso3Visible = false;
             return;
         }
-        cuaso3.style.transition = 'transform 0.22s cubic-bezier(.4,2,.3,1)';
-        cuaso3.style.transform = 'scale(0.7)';
+        cuaso3.style.transition = 'transform 0.38s cubic-bezier(.4,1.6,.3,1)';
+        cuaso3.style.transform = 'scale(0.75)';
         setTimeout(function() {
-            cuaso3.style.width = '300px';
-            cuaso3.style.height = '400px';
+            cuaso3.style.width = (300 * 0.75) + 'px';
+            cuaso3.style.height = (400 * 0.75) + 'px';
             cuaso3.style.transform = 'scale(1)';
-        }, 180);
+            document.getElementById('cuaso3-min').style.boxShadow = '0 0 0 4px #222, 0 0 8px 2px #7ed6fa';
+            document.getElementById('cuaso3-max').style.boxShadow = '';
+        }, 320);
     });
 };
 document.getElementById('cuaso3-max').onclick = function() {
     animateButton(this, function() {
-        cuaso3.style.transition = 'transform 0.22s cubic-bezier(.4,2,.3,1)';
-        cuaso3.style.transform = 'scale(1.08)';
+        cuaso3.style.transition = 'transform 0.38s cubic-bezier(.4,1.6,.3,1)';
+        cuaso3.style.transform = 'scale(2)';
         setTimeout(function() {
-            autoFitPopup(cuaso3);
+            cuaso3.style.width = '600px';
+            cuaso3.style.height = '800px';
             cuaso3.style.transform = 'scale(1)';
-        }, 180);
+            document.getElementById('cuaso3-max').style.boxShadow = '0 0 0 4px #222, 0 0 8px 2px #7ed6fa';
+            document.getElementById('cuaso3-min').style.boxShadow = '';
+        }, 320);
     });
 };
 // Đã xử lý ở trên: popup chỉ mở khi click thực sự, không phải khi kéo/thả nút
@@ -766,11 +679,24 @@ function autoFitPopup(popup) {
 
 // Hiệu ứng thu phóng khi đóng/mở popup
 function zoomPopup(popup, show, callback) {
-    popup.style.transition = 'transform 0.22s cubic-bezier(.4,2,.3,1), opacity 0.18s';
+    popup.style.transition = 'transform 0.32s cubic-bezier(.4,1.6,.3,1), opacity 0.22s';
+    // Phát âm thanh khi mở/tắt popup không bị delay
+    if (popup === customWindow) {
+        if (show) playAudioInstant('popup1-open-audio');
+        else playAudioInstant('popup1-close-audio');
+    }
+    if (popup === cuaso2) {
+        if (show) playAudioInstant('popup2-open-audio');
+        else playAudioInstant('popup2-close-audio');
+    }
+    if (popup === cuaso3) {
+        if (show) playAudioInstant('popup3-open-audio');
+        else playAudioInstant('popup3-close-audio');
+    }
     if (show) {
         popup.style.display = 'block';
         popup.style.opacity = '0';
-        popup.style.transform = 'scale(0.7)';
+        popup.style.transform = 'scale(0.85)';
         setTimeout(function() {
             popup.style.opacity = '1';
             popup.style.transform = 'scale(1)';
@@ -778,14 +704,108 @@ function zoomPopup(popup, show, callback) {
         }, 10);
     } else {
         popup.style.opacity = '0';
-        popup.style.transform = 'scale(0.7)';
+        popup.style.transform = 'scale(0.85)';
         setTimeout(function() {
             popup.style.display = 'none';
             popup.style.transform = 'scale(1)';
             if (callback) callback();
-        }, 180);
+        }, 220);
     }
 }
+// Thêm âm thanh khi bấm nút phóng to/thu nhỏ trong popup
+['custom-min','custom-max','cuaso2-min','cuaso2-max','cuaso3-min','cuaso3-max'].forEach(function(id) {
+    const btn = document.getElementById(id);
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+        if (id.endsWith('max')) playAudioInstant('popup-zoom-audio');
+        if (id.endsWith('min')) playAudioInstant('popup-min-audio');
+    }, true);
+});
+const nut4 = document.getElementById('nut4');
+let nut4Zoomed = false;
+let nut4Dragging = false;
+let nut4DragStarted = false;
+let nut4OffsetX = 0, nut4OffsetY = 0;
+let nut4MapWidth = window.innerWidth - 240;
+let nut4MapHeight = window.innerHeight - 240;
+let nut4Center = () => {
+    const winW = window.innerWidth;
+    const winH = window.innerHeight;
+    nut4.style.left = (winW/2 - 110) + 'px';
+    nut4.style.top = (winH/2 - 110) + 'px';
+};
+// Di chuyển nut4 bằng chuột
+nut4.addEventListener('mousedown', function(e) {
+    nut4Dragging = true;
+    nut4DragStarted = false;
+    nut4OffsetX = e.clientX - nut4.offsetLeft;
+    nut4OffsetY = e.clientY - nut4.offsetTop;
+    nut4.style.transition = 'none';
+});
+document.addEventListener('mousemove', function(e) {
+    if (nut4Dragging) {
+        nut4DragStarted = true;
+        let maxW = nut4Zoomed ? window.innerWidth - 220 : nut4MapWidth;
+        let maxH = nut4Zoomed ? window.innerHeight - 220 : nut4MapHeight;
+        let x = Math.max(0, Math.min(maxW, e.clientX - nut4OffsetX));
+        let y = Math.max(0, Math.min(maxH, e.clientY - nut4OffsetY));
+        nut4.style.left = x + 'px';
+        nut4.style.top = y + 'px';
+    }
+});
+document.addEventListener('mouseup', function(e) {
+    nut4Dragging = false;
+    nut4.style.transition = '';
+});
+nut4.addEventListener('click', function(e) {
+    if (nut4DragStarted) return;
+    if (!nut4Zoomed) {
+        document.getElementById('nut4-audio').play();
+        nut4Zoomed = true;
+        nut4.style.transition = 'width 0.38s, height 0.38s, left 0.38s, top 0.38s';
+        nut4.style.width = '360px';
+        nut4.style.height = '640px';
+        nut4.style.zIndex = '10000';
+        nut4.style.background = 'none';
+        nut4.style.border = 'none';
+        nut4.style.boxShadow = 'none';
+        nut4Center();
+        nut4.innerHTML = '<img id="nut4img" src="pic/qr.png" alt="Secret" style="width:100%; height:100%; object-fit:cover; user-select:none; pointer-events:none; background:none; border-radius:18px; border:4px solid #fff; box-shadow:0 0 32px 8px #fff, 0 0 8px 2px #fff;">';
+    } else {
+        nut4Zoomed = false;
+        nut4.style.transition = 'width 0.38s, height 0.38s, left 0.38s, top 0.38s';
+        nut4.style.width = '40px';
+        nut4.style.height = '40px';
+        nut4.style.zIndex = '1000';
+        nut4.style.background = '#eee';
+        nut4.style.border = '';
+        nut4.style.boxShadow = '0 0 8px #aaa';
+        nut4.innerHTML = '<img src="pic/phpls.png" alt="Hidden" style="width:100%; height:100%; border-radius:50%; pointer-events:none; user-select:none;">';
+    }
+});
+// Đặt vị trí ngẫu nhiên cho nut4 khi load trang
+window.addEventListener('DOMContentLoaded', function() {
+    const nut4 = document.getElementById('nut4');
+    let nut4MapWidth = window.innerWidth - 40;
+    let nut4MapHeight = window.innerHeight - 40;
+    let x = Math.floor(Math.random() * nut4MapWidth);
+    let y = Math.floor(Math.random() * nut4MapHeight);
+    nut4.style.left = x + 'px';
+    nut4.style.top = y + 'px';
+});
+window.addEventListener('resize', function() {
+    nut4MapWidth = window.innerWidth - 240;
+    nut4MapHeight = window.innerHeight - 240;
+});
+// Dịch chuyển ngẫu nhiên mỗi 5 giây
+setInterval(function() {
+    if (!nut4Zoomed) {
+        let x = Math.floor(Math.random() * nut4MapWidth);
+        let y = Math.floor(Math.random() * nut4MapHeight);
+        nut4.style.left = x + 'px';
+        nut4.style.top = y + 'px';
+    }
+}, 5000);
 	</script>
 </body>
 </html>
