@@ -311,6 +311,44 @@
 				isDraggingCuaso2 = false;
 				cuaso2Header.style.cursor = 'move';
 			});
+			// Thêm hỗ trợ kéo cửa sổ bằng cảm ứng (touch) cho customWindow
+			customHeader.addEventListener('touchstart', function(e) {
+    if (e.touches.length === 1) {
+        isDraggingCustom = true;
+        offsetXCustom = e.touches[0].clientX - customWindow.offsetLeft;
+        offsetYCustom = e.touches[0].clientY - customWindow.offsetTop;
+        customHeader.style.cursor = 'grabbing';
+    }
+});
+document.addEventListener('touchmove', function(e) {
+    if (isDraggingCustom && e.touches.length === 1) {
+        customWindow.style.left = (e.touches[0].clientX - offsetXCustom) + 'px';
+        customWindow.style.top = (e.touches[0].clientY - offsetYCustom) + 'px';
+    }
+});
+document.addEventListener('touchend', function() {
+    isDraggingCustom = false;
+    customHeader.style.cursor = 'move';
+});
+// Thêm hỗ trợ kéo cửa sổ bằng cảm ứng (touch) cho cuaso2
+cuaso2Header.addEventListener('touchstart', function(e) {
+    if (e.touches.length === 1) {
+        isDraggingCuaso2 = true;
+        offsetXCuaso2 = e.touches[0].clientX - cuaso2.offsetLeft;
+        offsetYCuaso2 = e.touches[0].clientY - cuaso2.offsetTop;
+        cuaso2Header.style.cursor = 'grabbing';
+    }
+});
+document.addEventListener('touchmove', function(e) {
+    if (isDraggingCuaso2 && e.touches.length === 1) {
+        cuaso2.style.left = (e.touches[0].clientX - offsetXCuaso2) + 'px';
+        cuaso2.style.top = (e.touches[0].clientY - offsetYCuaso2) + 'px';
+    }
+});
+document.addEventListener('touchend', function() {
+    isDraggingCuaso2 = false;
+    cuaso2Header.style.cursor = 'move';
+});
 	</script>
 </body>
 </html>
