@@ -806,7 +806,32 @@ setInterval(function() {
         nut4.style.top = y + 'px';
     }
 }, 5000);
+    // Thêm di chuyển cảm ứng cho nut4 (touch drag)
+    // Sử dụng biến nut4 đã có ở trên
+    let touchStartX = 0, touchStartY = 0, startLeft = 0, startTop = 0, isDragging = false;
+    nut4.addEventListener('touchstart', function(e) {
+        if (e.touches.length === 1) {
+            isDragging = true;
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+            startLeft = parseInt(nut4.style.left || nut4.offsetLeft);
+            startTop = parseInt(nut4.style.top || nut4.offsetTop);
+            nut4.style.transition = 'none';
+        }
+    });
+    nut4.addEventListener('touchmove', function(e) {
+        if (isDragging && e.touches.length === 1) {
+            let dx = e.touches[0].clientX - touchStartX;
+            let dy = e.touches[0].clientY - touchStartY;
+            nut4.style.left = (startLeft + dx) + 'px';
+            nut4.style.top = (startTop + dy) + 'px';
+            e.preventDefault();
+        }
+    }, {passive:false});
+    nut4.addEventListener('touchend', function(e) {
+        isDragging = false;
+        nut4.style.transition = '';
+    });
 	</script>
 </body>
 </html>
-
