@@ -349,6 +349,46 @@ document.addEventListener('touchend', function() {
     isDraggingCuaso2 = false;
     cuaso2Header.style.cursor = 'move';
 });
+// Thêm hỗ trợ resize cửa sổ bằng cảm ứng (touch) cho customWindow
+customResize.addEventListener('touchstart', function(e) {
+    if (e.touches.length === 1) {
+        isResizingCustom = true;
+        e.preventDefault();
+        e.stopPropagation();
+    }
+});
+document.addEventListener('touchmove', function(e) {
+    if (isResizingCustom && e.touches.length === 1) {
+        let minW = 200, minH = 120;
+        let newW = Math.max(minW, e.touches[0].clientX - customWindow.offsetLeft);
+        let newH = Math.max(minH, e.touches[0].clientY - customWindow.offsetTop);
+        customWindow.style.width = newW + 'px';
+        customWindow.style.height = newH + 'px';
+    }
+});
+document.addEventListener('touchend', function() {
+    isResizingCustom = false;
+});
+// Thêm hỗ trợ resize cửa sổ bằng cảm ứng (touch) cho cuaso2
+cuaso2Resize.addEventListener('touchstart', function(e) {
+    if (e.touches.length === 1) {
+        isResizingCuaso2 = true;
+        e.preventDefault();
+        e.stopPropagation();
+    }
+});
+document.addEventListener('touchmove', function(e) {
+    if (isResizingCuaso2 && e.touches.length === 1) {
+        let minW = 200, minH = 120;
+        let newW = Math.max(minW, e.touches[0].clientX - cuaso2.offsetLeft);
+        let newH = Math.max(minH, e.touches[0].clientY - cuaso2.offsetTop);
+        cuaso2.style.width = newW + 'px';
+        cuaso2.style.height = newH + 'px';
+    }
+});
+document.addEventListener('touchend', function() {
+    isResizingCuaso2 = false;
+});
 	</script>
 </body>
 </html>
