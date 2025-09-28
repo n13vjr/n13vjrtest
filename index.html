@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
 	<meta charset="UTF-8">
-	<title>Web với popup mờ kéo thả</title>
+	<title>Er Nerr</title>
 	<style>
 		body {
 			width: 1920px;
@@ -18,119 +18,99 @@
 			object-position: center bottom;
 			z-index: -1;
 		}
-		#nut1 {
-			position: fixed;
-			bottom: 32px;
-			right: 32px;
-			padding: 16px 32px;
-			background: rgba(255,255,255,0.5);
-			color: #333;
-			border: none;
-			border-radius: 12px;
-			box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-			font-size: 18px;
-			cursor: pointer;
-			z-index: 10;
-			backdrop-filter: blur(2px);
-			display: flex;
-			align-items: center;
-			gap: 8px;
-			transition: transform 0.18s cubic-bezier(.5,-0.5,.5,1);
-		}
-		#nut2 {
-			position: fixed;
-			right: 32px;
-			bottom: 32px;
-			/* nut2 nằm phía trên nut1, cách nut1 16px */
-			transform: translateY(-64px);
-			padding: 16px 32px;
-			background: rgba(255,255,255,0.5);
-			color: #333;
-			border: none;
-			border-radius: 12px;
-			box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-			font-size: 18px;
-			cursor: pointer;
-			z-index: 11;
-			backdrop-filter: blur(2px);
-			display: flex;
-			align-items: center;
-			gap: 8px;
-			transition: transform 0.18s cubic-bezier(.5,-0.5,.5,1);
-		}
-		#nut1.clicked, #nut2.clicked {
-			transform: scale(0.92);
-		}
-		#nut1 img, #nut2 img {
-			width: 40px;
-			height: 40px;
-			border-radius: 50%;
-			background: transparent;
-			pointer-events: none;
-		}
-		#cuaso1 {
-			display: none;
-			position: fixed;
-			top: 120px;
-			left: 120px;
-			width: 300px;
-			height: 400px;
-			background: rgba(255,255,255,0.5);
-			box-shadow: 0 4px 32px rgba(0,0,0,0.18);
-			border-radius: 16px;
-			z-index: 99999;
-			backdrop-filter: blur(8px);
-			overflow: hidden;
-		}
-		#custom-header {
-			cursor: move;
-			padding: 12px 16px;
-			background: rgba(255,255,255,0.3);
-			border-radius: 16px 16px 0 0;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-		}
-		#custom-title {
-			font-size: 20px;
-			color: #333;
-			text-align: center;
-			width: 100%;
-		}
-		#custom-content {
-			padding: 24px;
-			color: #333;
-			font-size: 24px;
-			display: flex;
-			flex-direction: column;
-			gap: 18px;
-			width: 100%;
-			box-sizing: border-box;
-			overflow: auto;
-			max-height: calc(100% - 56px);
-			align-items: center;
-		}
-		.custom-content-line {
-			display: flex;
-			align-items: center;
-			gap: 8px;
-			width: 100%;
-			min-width: 0;
-			justify-content: center;
-		}
-		.custom-content-line img {
-			width: 42px !important;
-			height: 42px !important;
-			min-width: 42px !important;
-			min-height: 42px !important;
-			max-width: 42px !important;
-			max-height: 42px !important;
-			object-fit: cover;
-			vertical-align: middle;
-		}
-		.custom-content-line a, .custom-content-line span {
-			font-size: 22px !important;
-		}
+		/* Gộp và rút gọn CSS cho các nút */
+#nut1, #nut2, #nut3 {
+    position: absolute;
+    right: unset;
+    bottom: unset;
+    left: 32px;
+    top: 32px;
+    /* Các nút sẽ bắt đầu ở vị trí khác nhau */
+}
+#nut2 { left: 32px; top: 112px; }
+#nut3 { left: 32px; top: 192px; }
+#nut1, #nut2, #nut3 {
+    position: absolute;
+    right: unset;
+    bottom: unset;
+    left: 32px;
+    width: 180px;
+    height: 64px;
+    padding: 0 32px;
+    background: rgba(255,255,255,0.6);
+    color: #222;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    font-size: 18px;
+    cursor: pointer;
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    user-select: none;
+    z-index: 1000000;
+    transition: box-shadow 0.2s, transform 0.15s;
+}
+
+#nut1:active, #nut2:active, #nut3:active {
+    box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+    transform: scale(0.96);
+    background: rgba(255,255,255,0.8);
+}
+#nut1 { top: 32px; }
+#nut2 { top: 112px; }
+#nut3 { top: 192px; }
+#nut1 img, #nut2 img, #nut3 img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: transparent;
+    pointer-events: none;
+}
+		/* Rút gọn CSS cho popup */
+.popup {
+    display: none;
+    position: fixed;
+    width: 300px;
+    height: 400px;
+    background: rgba(255,255,255,0.5);
+    box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+    border-radius: 16px;
+    z-index: 99999;
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+}
+.popup-header {
+    cursor: move;
+    padding: 12px 16px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 16px 16px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+    /* Căn giữa tiêu đề popup */
+    .popup-title {
+        font-size: 20px;
+        color: #333;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+.popup-content {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: auto;
+    max-height: calc(100% - 56px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 	</style>
 </head>
 <body>
@@ -138,42 +118,54 @@
 		<source src="b21.mp4" type="video/mp4">
 		Trình duyệt của bạn không hỗ trợ video.
 	</video>
-	<button id="nut1">
+	<!-- Nút -->
+<button id="nut1">
 		<img src="dcl.png" alt="Discord">
 		Discord
 	</button>
-	<button id="nut2" style="bottom:80px; right:32px; position:fixed; padding:16px 32px; background:rgba(255,255,255,0.5); color:#333; border:none; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08); font-size:18px; cursor:pointer; z-index:11; backdrop-filter:blur(2px); display:flex; align-items:center; gap:8px;">
+	<button id="nut2">
 		<img src="yt.png" alt="Youtube" style="width:28px; height:28px; border-radius:50%; background:transparent; pointer-events:none;">
 		Youtube
 	</button>
-	<audio id="btn-audio" src="vlg1.mp3" preload="auto"></audio>
-	<div id="cuaso1">
-		<div id="custom-header">
-			<span id="custom-title">13th / nerr</span>
-		</div>
-		<div id="custom-content">
-			<div style="margin-bottom:12px; display:flex; align-items:center; gap:8px;">
-				<img src="av2.png" alt="n13vjr" style="width:22px; height:22px; border-radius:50%;">
-				<a href="https://discordapp.com/users/1115398524805324941" target="_blank" style="color:#5865F2; text-decoration:none;">n13vjr</a>
-			</div>
-			<div style="margin-bottom:12px; display:flex; align-items:center; gap:8px;">
-				<img src="av1.gif" alt="n13vjr_" style="width:22px; height:22px; border-radius:50%;">
-				<a href="https://discordapp.com/users/982663978125758535" target="_blank" style="color:#5865F2; text-decoration:none;">n13vjr_</a>
-			</div>
-			<div class="custom-content-line" style="margin-bottom:12px; display:flex; align-items:center; gap:8px;">
-				<img src="av3.gif" alt="13th" style="width:22px; height:22px; border-radius:50%;">
-				<a href="https://discord.gg/9pPNkKGxsq" target="_blank" style="color:#5865F2; text-decoration:none;">13th</a>
-			</div>
-		</div>
-		<div class="resize-handle" id="custom-resize" style="position:absolute; right:0; bottom:0; width:18px; height:18px; cursor:se-resize; background:rgba(0,0,0,0.08); border-radius:0 0 6px 0; border:1px solid #ccc; z-index:100000;"></div>
-	</div>
-	<div id="cuaso2" style="display:none; position:fixed; top:180px; left:180px; width:300px; height:400px; background:rgba(255,255,255,0.5); box-shadow:0 4px 32px rgba(0,0,0,0.18); border-radius:16px; z-index:99999; backdrop-filter:blur(8px);">
-		<div id="cuaso2-header" style="cursor:move; padding:12px 16px; background:rgba(255,255,255,0.3); border-radius:16px 16px 0 0; display:flex; justify-content:space-between; align-items:center;">
-			<span id="cuaso2-title" style="font-size:20px; color:#333;">Cửa sổ 2 mờ 300x400px</span>
-		</div>
-		<div id="cuaso2-content" style="padding:24px; color:#333; font-size:16px;">Nội dung cửa sổ 2...</div>
-		<div class="resize-handle" id="cuaso2-resize" style="position:absolute; right:0; bottom:0; width:18px; height:18px; cursor:se-resize; background:rgba(0,0,0,0.08); border-radius:0 0 6px 0; border:1px solid #ccc; z-index:100000;"></div>
-	</div>
+	<button id="nut3">
+		<img src="Roblox.png" alt="Roblox" style="width:28px; height:28px; border-radius:50%; background:transparent; pointer-events:none;">
+		Roblox
+	</button>
+	<!-- Popup -->
+	<div id="cuaso1" class="popup" style="top:120px; left:120px;">
+    <div id="custom-header" class="popup-header">
+        <span id="custom-title" class="popup-title">13th / nerr</span>
+    </div>
+    <div id="custom-content" class="popup-content">
+        <a href="https://discordapp.com/users/1115398524805324941" target="_blank" style="color:#5865F2; text-decoration:none; display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+            <img src="av2.png" alt="n13vjr" style="width:42px; height:42px; border-radius:50%; object-fit:cover; vertical-align:middle;">
+            n13vjr
+        </a>
+        <a href="https://discordapp.com/users/982663978125758535" target="_blank" style="color:#5865F2; text-decoration:none; display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+            <img src="av1.gif" alt="n13vjr_" style="width:42px; height:42px; border-radius:50%; object-fit:cover; vertical-align:middle;">
+            n13vjr_
+        </a>
+        <a href="https://discord.gg/9pPNkKGxsq" target="_blank" style="color:#5865F2; text-decoration:none; display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+            <img src="av3.gif" alt="13th" style="width:42px; height:42px; border-radius:50%; object-fit:cover; vertical-align:middle;">
+            13th
+        </a>
+    </div>
+    <div class="resize-handle" id="custom-resize" style="position:absolute; right:0; bottom:0; width:18px; height:18px; cursor:se-resize; background:rgba(0,0,0,0.08); border-radius:0 0 6px 0; border:1px solid #ccc; z-index:100000;"></div>
+</div>
+<div id="cuaso2" class="popup" style="top:180px; left:180px;">
+    <div id="cuaso2-header" class="popup-header">
+        <span id="cuaso2-title" class="popup-title">Cửa sổ 2 mờ 300x400px</span>
+    </div>
+    <div id="cuaso2-content" class="popup-content">Nội dung cửa sổ 2...</div>
+    <div class="resize-handle" id="cuaso2-resize" style="position:absolute; right:0; bottom:0; width:18px; height:18px; cursor:se-resize; background:rgba(0,0,0,0.08); border-radius:0 0 6px 0; border:1px solid #ccc; z-index:100000;"></div>
+</div>
+<div id="cuaso3" class="popup" style="top:240px; left:240px;">
+    <div id="cuaso3-header" class="popup-header">
+        <span id="cuaso3-title" class="popup-title">My Roblox Accounts</span>
+    </div>
+    <div id="cuaso3-content" class="popup-content">Nội dung cửa sổ 3...</div>
+    <div class="resize-handle" id="cuaso3-resize" style="position:absolute; right:0; bottom:0; width:18px; height:18px; cursor:se-resize; background:rgba(0,0,0,0.08); border-radius:0 0 6px 0; border:1px solid #ccc; z-index:100000;"></div>
+</div>
 	<script>
 		// Resize cho customWindow
 		const customResize = document.getElementById('custom-resize');
@@ -215,6 +207,26 @@
 		document.addEventListener('mouseup', function() {
 			isResizingCuaso2 = false;
 		});
+		// Resize cho cuaso3
+		const cuaso3Resize = document.getElementById('cuaso3-resize');
+		let isResizingCuaso3 = false;
+		cuaso3Resize.addEventListener('mousedown', function(e) {
+			isResizingCuaso3 = true;
+			e.preventDefault();
+			e.stopPropagation();
+		});
+		document.addEventListener('mousemove', function(e) {
+			if (isResizingCuaso3) {
+				let minW = 200, minH = 120;
+				let newW = Math.max(minW, e.clientX - cuaso3.offsetLeft);
+				let newH = Math.max(minH, e.clientY - cuaso3.offsetTop);
+				cuaso3.style.width = newW + 'px';
+				cuaso3.style.height = newH + 'px';
+			}
+		});
+		document.addEventListener('mouseup', function() {
+			isResizingCuaso3 = false;
+		});
 			// Nút nut1: hiệu ứng hạt + hiện/tắt popup + ẩn/hiện nut1 img
 			const nut1 = document.getElementById('nut1');
 			const nut1Img = nut1.querySelector('img');
@@ -223,56 +235,47 @@
 			const nut2 = document.getElementById('nut2');
 			const cuaso2 = document.getElementById('cuaso2');
 			let cuaso2Visible = false;
-			nut1.addEventListener('click', function(e) {
-				// Hiệu ứng nhấp nút
-				nut1.classList.add('clicked');
-				setTimeout(() => nut1.classList.remove('clicked'), 180);
-				// Phát âm thanh
-				var audio = document.getElementById('btn-audio');
-				audio.currentTime = 0;
-				audio.play();
-				// Hiệu ứng hạt
-				const btn = e.currentTarget;
-				const rect = btn.getBoundingClientRect();
-				const centerX = rect.left + rect.width / 2;
-				const centerY = rect.top + rect.height / 2;
-				for (let i = 0; i < 20; i++) {
-					const angle = Math.random() * 2 * Math.PI;
-					const speed = 220 + Math.random() * 180;
-					const dx = Math.cos(angle) * speed + (Math.random() - 0.5) * 80;
-					const dy = Math.sin(angle) * speed - (160 + Math.random() * 160);
-					const particle = document.createElement('img');
-					particle.src = 'vdmg.png';
-					particle.style.position = 'fixed';
-					particle.style.left = centerX + 'px';
-					particle.style.top = centerY + 'px';
-					particle.style.width = '32px';
-					particle.style.height = '32px';
-					particle.style.pointerEvents = 'none';
-					particle.style.zIndex = 99999;
-					particle.style.transition = 'transform 1.2s cubic-bezier(.5,-0.5,.5,1), opacity 1.2s linear';
-					document.body.appendChild(particle);
-					setTimeout(() => {
-						particle.style.transform = `translate(${dx}px, ${dy}px) scale(0.7)`;
-						particle.style.opacity = '0';
-					}, 10);
-					setTimeout(() => {
-						particle.remove();
-					}, 1300);
-				}
-				// Toggle popup
-				popupVisible = !popupVisible;
-				customWindow.style.display = popupVisible ? 'block' : 'none';
-			});
-			nut2.addEventListener('click', function(e) {
-				nut2.classList.add('clicked');
-				setTimeout(() => nut2.classList.remove('clicked'), 180);
-				var audio = document.getElementById('btn-audio');
-				audio.currentTime = 0;
-				audio.play();
-				cuaso2Visible = !cuaso2Visible;
-				cuaso2.style.display = cuaso2Visible ? 'block' : 'none';
-			});
+			const nut3 = document.getElementById('nut3');
+			const cuaso3 = document.getElementById('cuaso3');
+			let cuaso3Visible = false;
+            // Chỉ mở popup khi click thực sự, không phải khi kéo/thả
+            function isClickEvent(e, btn) {
+                // Nếu là chuột trái và không phải kéo
+                return e.type === 'click' && !btn._dragging;
+            }
+
+            nut1._dragging = false;
+            nut1.addEventListener('mousedown', function(e) { nut1._dragging = false; });
+            nut1.addEventListener('mousemove', function(e) { nut1._dragging = true; });
+            nut1.addEventListener('click', function(e) {
+                if (isClickEvent(e, nut1)) {
+                    popupVisible = !popupVisible;
+                    customWindow.style.display = popupVisible ? 'block' : 'none';
+                }
+                nut1._dragging = false;
+            });
+
+            nut2._dragging = false;
+            nut2.addEventListener('mousedown', function(e) { nut2._dragging = false; });
+            nut2.addEventListener('mousemove', function(e) { nut2._dragging = true; });
+            nut2.addEventListener('click', function(e) {
+                if (isClickEvent(e, nut2)) {
+                    cuaso2Visible = !cuaso2Visible;
+                    cuaso2.style.display = cuaso2Visible ? 'block' : 'none';
+                }
+                nut2._dragging = false;
+            });
+
+            nut3._dragging = false;
+            nut3.addEventListener('mousedown', function(e) { nut3._dragging = false; });
+            nut3.addEventListener('mousemove', function(e) { nut3._dragging = true; });
+            nut3.addEventListener('click', function(e) {
+                if (isClickEvent(e, nut3)) {
+                    cuaso3Visible = !cuaso3Visible;
+                    cuaso3.style.display = cuaso3Visible ? 'block' : 'none';
+                }
+                nut3._dragging = false;
+            });
 			// Kéo di chuyển cửa sổ custom
 			const customHeader = document.getElementById('custom-header');
 			let isDraggingCustom = false, offsetXCustom = 0, offsetYCustom = 0;
@@ -310,6 +313,25 @@
 			document.addEventListener('mouseup', function() {
 				isDraggingCuaso2 = false;
 				cuaso2Header.style.cursor = 'move';
+			});
+			// Kéo di chuyển cửa sổ cuaso3
+			const cuaso3Header = document.getElementById('cuaso3-header');
+			let isDraggingCuaso3 = false, offsetXCuaso3 = 0, offsetYCuaso3 = 0;
+			cuaso3Header.addEventListener('mousedown', function(e) {
+				isDraggingCuaso3 = true;
+				offsetXCuaso3 = e.clientX - cuaso3.offsetLeft;
+				offsetYCuaso3 = e.clientY - cuaso3.offsetTop;
+				cuaso3Header.style.cursor = 'grabbing';
+			});
+			document.addEventListener('mousemove', function(e) {
+				if (isDraggingCuaso3) {
+					cuaso3.style.left = (e.clientX - offsetXCuaso3) + 'px';
+					cuaso3.style.top = (e.clientY - offsetYCuaso3) + 'px';
+				}
+			});
+			document.addEventListener('mouseup', function() {
+				isDraggingCuaso3 = false;
+				cuaso3Header.style.cursor = 'move';
 			});
 			// Thêm hỗ trợ kéo cửa sổ bằng cảm ứng (touch) cho customWindow
 			customHeader.addEventListener('touchstart', function(e) {
@@ -349,46 +371,162 @@ document.addEventListener('touchend', function() {
     isDraggingCuaso2 = false;
     cuaso2Header.style.cursor = 'move';
 });
-// Thêm hỗ trợ resize cửa sổ bằng cảm ứng (touch) cho customWindow
-customResize.addEventListener('touchstart', function(e) {
+// Thêm hỗ trợ kéo cửa sổ bằng cảm ứng (touch) cho cuaso3
+cuaso3Header.addEventListener('touchstart', function(e) {
     if (e.touches.length === 1) {
-        isResizingCustom = true;
-        e.preventDefault();
-        e.stopPropagation();
+        isDraggingCuaso3 = true;
+        offsetXCuaso3 = e.touches[0].clientX - cuaso3.offsetLeft;
+        offsetYCuaso3 = e.touches[0].clientY - cuaso3.offsetTop;
+        cuaso3Header.style.cursor = 'grabbing';
     }
 });
 document.addEventListener('touchmove', function(e) {
-    if (isResizingCustom && e.touches.length === 1) {
-        let minW = 200, minH = 120;
-        let newW = Math.max(minW, e.touches[0].clientX - customWindow.offsetLeft);
-        let newH = Math.max(minH, e.touches[0].clientY - customWindow.offsetTop);
-        customWindow.style.width = newW + 'px';
-        customWindow.style.height = newH + 'px';
+    if (isDraggingCuaso3 && e.touches.length === 1) {
+        cuaso3.style.left = (e.touches[0].clientX - offsetXCuaso3) + 'px';
+        cuaso3.style.top = (e.touches[0].clientY - offsetYCuaso3) + 'px';
     }
 });
 document.addEventListener('touchend', function() {
-    isResizingCustom = false;
+    isDraggingCuaso3 = false;
+    cuaso3Header.style.cursor = 'move';
 });
-// Thêm hỗ trợ resize cửa sổ bằng cảm ứng (touch) cho cuaso2
-cuaso2Resize.addEventListener('touchstart', function(e) {
+		// Kéo di chuyển nút nut1
+let isDraggingNut1 = false, offsetXNut1 = 0, offsetYNut1 = 0;
+nut1.addEventListener('mousedown', function(e) {
+    isDraggingNut1 = true;
+    offsetXNut1 = e.clientX - nut1.offsetLeft;
+    offsetYNut1 = e.clientY - nut1.offsetTop;
+    nut1.style.cursor = 'grabbing';
+});
+document.addEventListener('mousemove', function(e) {
+    if (isDraggingNut1) {
+        nut1.style.left = (e.clientX - offsetXNut1) + 'px';
+        nut1.style.top = (e.clientY - offsetYNut1) + 'px';
+        nut1.style.right = '';
+        nut1.style.bottom = '';
+        nut1.style.position = 'fixed';
+    }
+});
+document.addEventListener('mouseup', function() {
+    isDraggingNut1 = false;
+    nut1.style.cursor = 'pointer';
+});
+// Kéo di chuyển nút nut2
+let isDraggingNut2 = false, offsetXNut2 = 0, offsetYNut2 = 0;
+nut2.addEventListener('mousedown', function(e) {
+    isDraggingNut2 = true;
+    offsetXNut2 = e.clientX - nut2.offsetLeft;
+    offsetYNut2 = e.clientY - nut2.offsetTop;
+    nut2.style.cursor = 'grabbing';
+});
+document.addEventListener('mousemove', function(e) {
+    if (isDraggingNut2) {
+        nut2.style.left = (e.clientX - offsetXNut2) + 'px';
+        nut2.style.top = (e.clientY - offsetYNut2) + 'px';
+        nut2.style.right = '';
+        nut2.style.bottom = '';
+        nut2.style.position = 'fixed';
+        nut2.style.transform = '';
+    }
+});
+document.addEventListener('mouseup', function() {
+    isDraggingNut2 = false;
+    nut2.style.cursor = 'pointer';
+});
+// Kéo di chuyển nút nut3
+let isDraggingNut3 = false, offsetXNut3 = 0, offsetYNut3 = 0;
+nut3.addEventListener('mousedown', function(e) {
+    isDraggingNut3 = true;
+    offsetXNut3 = e.clientX - nut3.offsetLeft;
+    offsetYNut3 = e.clientY - nut3.offsetTop;
+    nut3.style.cursor = 'grabbing';
+});
+document.addEventListener('mousemove', function(e) {
+    if (isDraggingNut3) {
+        nut3.style.left = (e.clientX - offsetXNut3) + 'px';
+        nut3.style.top = (e.clientY - offsetYNut3) + 'px';
+        nut3.style.right = '';
+        nut3.style.bottom = '';
+        nut3.style.position = 'fixed';
+    }
+});
+document.addEventListener('mouseup', function() {
+    isDraggingNut3 = false;
+    nut3.style.cursor = 'pointer';
+});
+// Hỗ trợ kéo bằng cảm ứng cho nut1
+nut1.addEventListener('touchstart', function(e) {
     if (e.touches.length === 1) {
-        isResizingCuaso2 = true;
-        e.preventDefault();
-        e.stopPropagation();
+        isDraggingNut1 = true;
+        offsetXNut1 = e.touches[0].clientX - nut1.offsetLeft;
+        offsetYNut1 = e.touches[0].clientY - nut1.offsetTop;
+        nut1.style.cursor = 'grabbing';
     }
 });
 document.addEventListener('touchmove', function(e) {
-    if (isResizingCuaso2 && e.touches.length === 1) {
-        let minW = 200, minH = 120;
-        let newW = Math.max(minW, e.touches[0].clientX - cuaso2.offsetLeft);
-        let newH = Math.max(minH, e.touches[0].clientY - cuaso2.offsetTop);
-        cuaso2.style.width = newW + 'px';
-        cuaso2.style.height = newH + 'px';
+    if (isDraggingNut1 && e.touches.length === 1) {
+        nut1.style.left = (e.touches[0].clientX - offsetXNut1) + 'px';
+        nut1.style.top = (e.touches[0].clientY - offsetYNut1) + 'px';
+        nut1.style.right = '';
+        nut1.style.bottom = '';
+        nut1.style.position = 'fixed';
     }
 });
 document.addEventListener('touchend', function() {
-    isResizingCuaso2 = false;
+    isDraggingNut1 = false;
+    nut1.style.cursor = 'pointer';
 });
+// Hỗ trợ kéo bằng cảm ứng cho nut2
+nut2.addEventListener('touchstart', function(e) {
+    if (e.touches.length === 1) {
+        isDraggingNut2 = true;
+        offsetXNut2 = e.touches[0].clientX - nut2.offsetLeft;
+        offsetYNut2 = e.touches[0].clientY - nut2.offsetTop;
+        nut2.style.cursor = 'grabbing';
+    }
+});
+document.addEventListener('touchmove', function(e) {
+    if (isDraggingNut2 && e.touches.length === 1) {
+        nut2.style.left = (e.touches[0].clientX - offsetXNut2) + 'px';
+        nut2.style.top = (e.touches[0].clientY - offsetYNut2) + 'px';
+        nut2.style.right = '';
+        nut2.style.bottom = '';
+        nut2.style.position = 'fixed';
+        nut2.style.transform = '';
+    }
+});
+document.addEventListener('touchend', function() {
+    isDraggingNut2 = false;
+    nut2.style.cursor = 'pointer';
+});
+// Hỗ trợ kéo bằng cảm ứng cho nut3
+nut3.addEventListener('touchstart', function(e) {
+    if (e.touches.length === 1) {
+        isDraggingNut3 = true;
+        offsetXNut3 = e.touches[0].clientX - nut3.offsetLeft;
+        offsetYNut3 = e.touches[0].clientY - nut3.offsetTop;
+        nut3.style.cursor = 'grabbing';
+    }
+});
+document.addEventListener('touchmove', function(e) {
+    if (isDraggingNut3 && e.touches.length === 1) {
+        nut3.style.left = (e.touches[0].clientX - offsetXNut3) + 'px';
+        nut3.style.top = (e.touches[0].clientY - offsetYNut3) + 'px';
+        nut3.style.right = '';
+        nut3.style.bottom = '';
+        nut3.style.position = 'fixed';
+    }
+});
+document.addEventListener('touchend', function() {
+    isDraggingNut3 = false;
+    nut3.style.cursor = 'pointer';
+});
+// Rút gọn JS cho nút
+function togglePopup(btn, popup, visibleVar) {
+    window[visibleVar] = !window[visibleVar];
+    popup.style.display = window[visibleVar] ? 'block' : 'none';
+}
+// Đã xử lý ở trên: popup chỉ mở khi click thực sự, không phải khi kéo/thả nút
 	</script>
 </body>
 </html>
